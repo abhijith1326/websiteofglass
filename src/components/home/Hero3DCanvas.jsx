@@ -322,6 +322,17 @@ export default function Hero3DCanvas() {
           .hero-3d-writings-block {
             max-width: 100% !important;
             margin-top: 0 !important;
+            background: rgba(6, 12, 24, 0.78) !important;
+            backdrop-filter: blur(16px) saturate(180%) !important;
+            -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+            border: 1px solid rgba(255, 255, 255, 0.18) !important;
+            border-radius: 20px !important;
+            padding: 1.25rem 1.25rem !important;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 0 30px rgba(56, 189, 248, 0.15) !important;
+          }
+          .hero-3d-headline {
+            text-shadow: none !important;
+            filter: none !important;
           }
           .hero-3d-rotating-badge {
             right: 1.25rem !important;
@@ -332,23 +343,27 @@ export default function Hero3DCanvas() {
         }
         @media (max-width: 600px) {
           .hero-3d-content-wrap {
-            padding-top: clamp(4.5rem, 10vh, 5.5rem) !important;
+            padding-top: clamp(4.25rem, 9vh, 5.25rem) !important;
             padding-bottom: 1.5rem !important;
-            padding-inline: 1.25rem !important;
+            padding-inline: 1rem !important;
             justify-content: flex-start !important;
           }
+          .hero-3d-writings-block {
+            padding: 1.1rem 1rem !important;
+            border-radius: 18px !important;
+          }
           .hero-3d-headline {
-            font-size: clamp(1.45rem, 5.5vw, 1.95rem) !important;
+            font-size: clamp(1.5rem, 6vw, 1.95rem) !important;
             margin-bottom: 0.5rem !important;
-            line-height: 1.2 !important;
-            text-shadow: 0 4px 16px rgba(0, 0, 0, 0.95), 0 2px 6px rgba(0, 0, 0, 0.9) !important;
+            line-height: 1.25 !important;
+            text-shadow: none !important;
+            filter: none !important;
           }
           .hero-3d-desc {
             font-size: clamp(0.8rem, 3.2vw, 0.9rem) !important;
             margin-bottom: 0.65rem !important;
             line-height: 1.45 !important;
-            color: #E2E8F0 !important;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95) !important;
+            color: #F1F5F9 !important;
           }
           .hero-3d-specs-strip {
             display: grid !important;
@@ -455,11 +470,10 @@ export default function Hero3DCanvas() {
               lineHeight: 1.15,
               letterSpacing: '-0.02em',
               marginBottom: '0.85rem',
-              filter: 'drop-shadow(0 4px 20px rgba(0, 0, 0, 0.95))'
             }}
           >
             <span style={{
-              background: 'linear-gradient(135deg, #FFFFFF 0%, #E2E8F0 100%)',
+              background: 'linear-gradient(135deg, #FFFFFF 0%, #F1F5F9 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               display: 'block'
@@ -467,7 +481,7 @@ export default function Hero3DCanvas() {
               Premium Glass
             </span>
             <span style={{
-              background: 'linear-gradient(135deg, #60A5FA 0%, #3B82F6 100%)',
+              background: 'linear-gradient(135deg, #BAE6FD 0%, #38BDF8 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               display: 'block'
@@ -475,7 +489,7 @@ export default function Hero3DCanvas() {
               & Architectural
             </span>
             <span style={{
-              background: 'linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%)',
+              background: 'linear-gradient(135deg, #FEF08A 0%, #FACC15 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               display: 'inline-block',
