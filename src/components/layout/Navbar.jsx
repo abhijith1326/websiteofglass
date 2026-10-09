@@ -64,40 +64,6 @@ export default function Navbar() {
 
         {/* Right Actions & Utilities */}
         <div className="nav-actions">
-          {/* Cmd+K Search Trigger */}
-          <button
-            onClick={openPalette}
-            title="Search Products & Tools (Cmd+K)"
-            className="search-trigger-btn"
-          >
-            <Search size={15} color="#1D4ED8" />
-            <span className="search-label">SEARCH</span>
-            <kbd className="search-kbd">⌘K</kbd>
-          </button>
-
-          {/* Audio FX Toggle */}
-          <button
-            onClick={toggleAudio}
-            title={enabled ? 'Sound FX On' : 'Sound FX Off'}
-            className={`nav-icon-btn ${enabled ? 'active' : ''}`}
-          >
-            {enabled ? <Volume2 size={18} /> : <VolumeX size={18} />}
-          </button>
-
-          {/* Sample Swatch Box Drawer Trigger */}
-          <button
-            onClick={openDrawer}
-            title="View Sample Box"
-            className="nav-icon-btn cart-trigger-btn"
-          >
-            <Box size={18} />
-            {items.length > 0 && (
-              <span className="cart-badge-count">
-                {items.length}
-              </span>
-            )}
-          </button>
-
           {/* Desktop CTA Get Quote */}
           <Link to="/contact" className="btn btn-royal btn-pill desktop-quote-btn">
             GET A QUOTE →
