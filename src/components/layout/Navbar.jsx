@@ -75,7 +75,7 @@ export default function Navbar() {
             className="mobile-toggle-btn"
             aria-label="Toggle Navigation Menu"
           >
-            {mobileOpen ? <X size={26} /> : <Menu size={26} />}
+            {mobileOpen ? <X size={26} color="#FFFFFF" /> : <Menu size={26} color="#FFFFFF" />}
           </button>
         </div>
       </div>
