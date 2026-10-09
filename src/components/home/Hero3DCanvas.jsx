@@ -322,17 +322,13 @@ export default function Hero3DCanvas() {
           .hero-3d-writings-block {
             max-width: 100% !important;
             margin-top: 0 !important;
-            background: rgba(6, 12, 24, 0.78) !important;
-            backdrop-filter: blur(16px) saturate(180%) !important;
-            -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
-            border: 1px solid rgba(255, 255, 255, 0.18) !important;
-            border-radius: 20px !important;
-            padding: 1.25rem 1.25rem !important;
-            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 0 30px rgba(56, 189, 248, 0.15) !important;
-          }
-          .hero-3d-headline {
-            text-shadow: none !important;
-            filter: none !important;
+            background: transparent !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            border: none !important;
+            border-radius: 0 !important;
+            padding: 0 !important;
+            box-shadow: none !important;
           }
           .hero-3d-rotating-badge {
             right: 1.25rem !important;
@@ -349,15 +345,15 @@ export default function Hero3DCanvas() {
             justify-content: flex-start !important;
           }
           .hero-3d-writings-block {
-            padding: 1.1rem 1rem !important;
-            border-radius: 18px !important;
+            padding: 0 !important;
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
           }
           .hero-3d-headline {
             font-size: clamp(1.5rem, 6vw, 1.95rem) !important;
             margin-bottom: 0.5rem !important;
             line-height: 1.25 !important;
-            text-shadow: none !important;
-            filter: none !important;
           }
           .hero-3d-desc {
             font-size: clamp(0.8rem, 3.2vw, 0.9rem) !important;
