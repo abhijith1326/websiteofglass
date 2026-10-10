@@ -176,7 +176,14 @@ export default function Hero3DCanvas() {
       let frameIdx = Math.round(currentFrameRef.current);
       frameIdx = ((frameIdx % TOTAL_FRAMES) + TOTAL_FRAMES) % TOTAL_FRAMES;
 
+      // Clear & fill background with bright studio spotlight glow behind glass pane
       ctx.clearRect(0, 0, w, h);
+      const bgGrad = ctx.createRadialGradient(w * 0.5, h * 0.5, 10, w * 0.5, h * 0.5, Math.max(w, h) * 0.7);
+      bgGrad.addColorStop(0, '#152136');
+      bgGrad.addColorStop(0.5, '#090e17');
+      bgGrad.addColorStop(1, '#04070d');
+      ctx.fillStyle = bgGrad;
+      ctx.fillRect(0, 0, w, h);
 
       const img = images[frameIdx];
       if (img && img.complete && img.naturalWidth > 0) {
@@ -187,13 +194,20 @@ export default function Hero3DCanvas() {
         const canvasRatio = w / h;
         let drawW, drawH, offsetX, offsetY;
 
-        // Full-Screen Cover Scaling: 3D video animation fills 100% of screen without blank black spaces
-        if (canvasRatio > imgRatio) {
+        if (w <= 768) {
+          // Mobile View: Fit full glass panel in center matching Image 2 without dark zoom crop
+          drawW = Math.max(w, h * imgRatio * 0.72);
+          drawH = drawW / imgRatio;
+          offsetX = (w - drawW) / 2;
+          offsetY = (h - drawH) / 2;
+        } else if (canvasRatio > imgRatio) {
+          // Desktop Wide View
           drawW = w;
           drawH = w / imgRatio;
           offsetX = 0;
           offsetY = (h - drawH) / 2;
         } else {
+          // Desktop Standard View
           drawH = h;
           drawW = h * imgRatio;
           offsetX = (w - drawW) / 2;
@@ -205,29 +219,8 @@ export default function Hero3DCanvas() {
         const initialYShift = (1 - startPhase) * (-h * 0.085);
         offsetY += initialYShift;
 
-        // Draw 3D image
+        // Draw bright 3D image
         ctx.drawImage(img, offsetX, offsetY, drawW, drawH);
-
-        if (w <= 768) {
-          // Soft dark ambient vignette so full-screen 3D animation background is visible while text overlay stays ultra-legible
-          const mobileFade = ctx.createLinearGradient(0, 0, 0, h);
-          mobileFade.addColorStop(0, 'rgba(4, 7, 13, 0.45)');
-          mobileFade.addColorStop(0.5, 'rgba(4, 7, 13, 0.65)');
-          mobileFade.addColorStop(1, 'rgba(4, 7, 13, 0.94)');
-          ctx.fillStyle = mobileFade;
-          ctx.fillRect(0, 0, w, h);
-        } else {
-          // Soft gradient on the left side only for desktop text legibility
-          const leftFade = ctx.createLinearGradient(0, 0, w * 0.55, 0);
-          leftFade.addColorStop(0, 'rgba(4, 7, 13, 0.85)');
-          leftFade.addColorStop(0.65, 'rgba(4, 7, 13, 0.35)');
-          leftFade.addColorStop(1, 'rgba(4, 7, 13, 0)');
-          ctx.fillStyle = leftFade;
-          ctx.fillRect(0, 0, w * 0.55, h);
-        }
-      } else {
-        ctx.fillStyle = '#04070D';
-        ctx.fillRect(0, 0, w, h);
       }
 
       ctx.restore();
@@ -409,7 +402,6 @@ export default function Hero3DCanvas() {
           height: '100%',
           objectFit: 'cover',
           zIndex: 1,
-          filter: 'contrast(1.04) brightness(0.96)',
         }}
       />
 

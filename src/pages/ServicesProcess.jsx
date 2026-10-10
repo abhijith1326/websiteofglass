@@ -228,13 +228,7 @@ export default function ServicesProcess() {
             }}
           />
 
-          {/* Dark Overlay Tint for Readability */}
-          <div style={{
-            position: 'absolute',
-            inset: 0,
-            background: 'linear-gradient(180deg, rgba(4,7,13,0.45) 0%, rgba(4,7,13,0.15) 50%, rgba(4,7,13,0.65) 100%)',
-            pointerEvents: 'none'
-          }} />
+          {/* Original video color maintained - no dark overlay tint */}
 
           {/* Top Entrance Badge */}
           <div style={{
