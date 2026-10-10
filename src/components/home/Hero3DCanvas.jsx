@@ -25,39 +25,52 @@ export default function Hero3DCanvas() {
   const animFrameIdRef = useRef(null);
   const touchStartYRef = useRef(0);
 
-  // Preload all 192 frames for both Desktop and Mobile view
+  // Instant Progressive Frame Loading Engine
   useEffect(() => {
     let isMounted = true;
-    const loadedDesktop = [];
-    const loadedMobile = [];
-    let count = 0;
+    const isMobile = window.innerWidth <= 768;
+    const activeFolder = isMobile ? '/mobile-frames' : '/frames';
 
+    const targetArr = new Array(TOTAL_FRAMES);
+
+    // 1. Instantly load Frame 1 so 3D Canvas renders immediately (< 50ms) without waiting
+    const firstImg = new Image();
+    firstImg.src = `${activeFolder}/frame-0001.jpg`;
+    firstImg.onload = () => {
+      if (!isMounted) return;
+      targetArr[0] = firstImg;
+      if (isMobile) setMobileImages([...targetArr]);
+      else setDesktopImages([...targetArr]);
+      setIsLoaded(true);
+    };
+
+    // 2. Preload remaining frames for active device in background
+    let loadedCounter = 0;
     for (let i = 1; i <= TOTAL_FRAMES; i++) {
       const frameNum = String(i).padStart(4, '0');
+      const img = new Image();
+      img.src = `${activeFolder}/frame-${frameNum}.jpg`;
 
-      const dImg = new Image();
-      dImg.src = `/frames/frame-${frameNum}.jpg`;
-      dImg.onload = () => {
+      img.onload = () => {
         if (!isMounted) return;
-        count++;
-        setLoadedCount(count);
-        if (count === TOTAL_FRAMES) setIsLoaded(true);
+        targetArr[i - 1] = img;
+        loadedCounter++;
+        setLoadedCount(loadedCounter);
+        if (loadedCounter === TOTAL_FRAMES) {
+          if (isMobile) setMobileImages([...targetArr]);
+          else setDesktopImages([...targetArr]);
+        }
       };
-      dImg.onerror = () => {
-        if (!isMounted) return;
-        count++;
-        setLoadedCount(count);
-        if (count === TOTAL_FRAMES) setIsLoaded(true);
-      };
-      loadedDesktop.push(dImg);
 
-      const mImg = new Image();
-      mImg.src = `/mobile-frames/frame-${frameNum}.jpg`;
-      loadedMobile.push(mImg);
+      img.onerror = () => {
+        if (!isMounted) return;
+        loadedCounter++;
+        setLoadedCount(loadedCounter);
+      };
     }
 
-    setDesktopImages(loadedDesktop);
-    setMobileImages(loadedMobile);
+    if (isMobile) setMobileImages(targetArr);
+    else setDesktopImages(targetArr);
 
     return () => {
       isMounted = false;
@@ -427,32 +440,6 @@ export default function Hero3DCanvas() {
           zIndex: 1,
         }}
       />
-
-      {/* Loading Indicator */}
-      {!isLoaded && (
-        <div
-          style={{
-            position: 'absolute',
-            top: '2rem',
-            right: '2rem',
-            zIndex: 30,
-            background: 'rgba(8,12,20,0.85)',
-            border: '1px solid rgba(255,255,255,0.15)',
-            backdropFilter: 'blur(12px)',
-            padding: '0.625rem 1.25rem',
-            borderRadius: '9999px',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.75rem',
-            fontSize: '0.75rem',
-            fontWeight: 700,
-            color: '#fff',
-          }}
-        >
-          <Sparkles className="animate-spin" size={14} color="#60A5FA" />
-          <span>BUFFERING 3D VIDEO {loadPercentage}%</span>
-        </div>
-      )}
 
       {/* Responsive Content Container */}
       <div
