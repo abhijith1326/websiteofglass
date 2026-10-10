@@ -2,7 +2,7 @@ import React, { useId } from 'react';
 
 export default function RotatingBadge({ 
   size = 145, 
-  text = "★ TRIVANDRUM GLASS ★ 65 YEARS OF EXCELLENCE ★ ", 
+  text = "★ TRAVANCORE GLASS ★ 65 YEARS OF EXCELLENCE ★ ", 
   number = "65", 
   subtext = "YEARS", 
   variant = "light" 

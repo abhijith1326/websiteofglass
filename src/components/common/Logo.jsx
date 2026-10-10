@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 export default function Logo({ variant = 'dark', size = 'medium', className = '', onClick }) {
   // Height map for responsive rendering
   const heightMap = {
-    small: '36px',
-    medium: '48px',
-    large: '60px'
+    small: '42px',
+    medium: '54px',
+    large: '70px'
   };
 
   const logoHeight = heightMap[size] || heightMap.medium;
@@ -26,14 +26,14 @@ export default function Logo({ variant = 'dark', size = 'medium', className = ''
       <style>{`
         @media (max-width: 768px) {
           .trivandrum-brand-logo-img {
-            height: 36px !important;
-            max-height: 36px !important;
+            height: 42px !important;
+            max-height: 42px !important;
           }
         }
         @media (max-width: 480px) {
           .trivandrum-brand-logo-img {
-            height: 30px !important;
-            max-height: 30px !important;
+            height: 36px !important;
+            max-height: 36px !important;
           }
         }
       `}</style>
@@ -53,11 +53,11 @@ export default function Logo({ variant = 'dark', size = 'medium', className = ''
             boxShadow: '0 4px 16px rgba(0,0,0,0.12)',
           } : {})
         }}
-        title="TRIVANDRUM GLASS & PLYWOOD"
+        title="TRAVANCORE GLASS AND PLYWOOD"
       >
         <img
           src={logoSrc}
-          alt="TRIVANDRUM GLASS & PLYWOOD Logo"
+          alt="TRAVANCORE GLASS AND PLYWOOD Logo"
           className="trivandrum-brand-logo-img"
           style={{
             height: logoHeight,

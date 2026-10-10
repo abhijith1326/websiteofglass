@@ -13,7 +13,8 @@ export default function Hero3DCanvas() {
   const { playTone } = useAudioFX();
   const { addItem } = useSampleCart();
 
-  const [images, setImages] = useState([]);
+  const [desktopImages, setDesktopImages] = useState([]);
+  const [mobileImages, setMobileImages] = useState([]);
   const [loadedCount, setLoadedCount] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
   const [frameProgress, setFrameProgress] = useState(0);
@@ -24,39 +25,39 @@ export default function Hero3DCanvas() {
   const animFrameIdRef = useRef(null);
   const touchStartYRef = useRef(0);
 
-  // Preload all 192 frames
+  // Preload all 192 frames for both Desktop and Mobile view
   useEffect(() => {
     let isMounted = true;
-    const loadedImages = [];
+    const loadedDesktop = [];
+    const loadedMobile = [];
     let count = 0;
 
     for (let i = 1; i <= TOTAL_FRAMES; i++) {
-      const img = new Image();
       const frameNum = String(i).padStart(4, '0');
-      img.src = `/frames/frame-${frameNum}.jpg`;
 
-      img.onload = () => {
+      const dImg = new Image();
+      dImg.src = `/frames/frame-${frameNum}.jpg`;
+      dImg.onload = () => {
         if (!isMounted) return;
         count++;
         setLoadedCount(count);
-        if (count === TOTAL_FRAMES) {
-          setIsLoaded(true);
-        }
+        if (count === TOTAL_FRAMES) setIsLoaded(true);
       };
-
-      img.onerror = () => {
+      dImg.onerror = () => {
         if (!isMounted) return;
         count++;
         setLoadedCount(count);
-        if (count === TOTAL_FRAMES) {
-          setIsLoaded(true);
-        }
+        if (count === TOTAL_FRAMES) setIsLoaded(true);
       };
+      loadedDesktop.push(dImg);
 
-      loadedImages.push(img);
+      const mImg = new Image();
+      mImg.src = `/mobile-frames/frame-${frameNum}.jpg`;
+      loadedMobile.push(mImg);
     }
 
-    setImages(loadedImages);
+    setDesktopImages(loadedDesktop);
+    setMobileImages(loadedMobile);
 
     return () => {
       isMounted = false;
@@ -176,16 +177,25 @@ export default function Hero3DCanvas() {
       let frameIdx = Math.round(currentFrameRef.current);
       frameIdx = ((frameIdx % TOTAL_FRAMES) + TOTAL_FRAMES) % TOTAL_FRAMES;
 
-      // Clear & fill background with bright studio spotlight glow behind glass pane
+      // Clear & fill background with solid swatch #181A1F on mobile / studio glow on desktop
       ctx.clearRect(0, 0, w, h);
-      const bgGrad = ctx.createRadialGradient(w * 0.5, h * 0.5, 10, w * 0.5, h * 0.5, Math.max(w, h) * 0.7);
-      bgGrad.addColorStop(0, '#152136');
-      bgGrad.addColorStop(0.5, '#090e17');
-      bgGrad.addColorStop(1, '#04070d');
-      ctx.fillStyle = bgGrad;
+      if (w <= 768) {
+        // Mobile View animation background using exact user swatch #181A1F
+        ctx.fillStyle = '#181A1F';
+      } else {
+        // Desktop View background
+        const bgGrad = ctx.createRadialGradient(w * 0.5, h * 0.5, 10, w * 0.5, h * 0.5, Math.max(w, h) * 0.7);
+        bgGrad.addColorStop(0, '#152136');
+        bgGrad.addColorStop(0.5, '#090e17');
+        bgGrad.addColorStop(1, '#04070d');
+        ctx.fillStyle = bgGrad;
+      }
       ctx.fillRect(0, 0, w, h);
 
-      const img = images[frameIdx];
+      const isMobileView = w <= 768;
+      const targetImages = (isMobileView && mobileImages.length > 0) ? mobileImages : desktopImages;
+      const img = targetImages[frameIdx] || desktopImages[frameIdx];
+
       if (img && img.complete && img.naturalWidth > 0) {
         ctx.imageSmoothingEnabled = true;
         ctx.imageSmoothingQuality = 'high';
@@ -194,12 +204,19 @@ export default function Hero3DCanvas() {
         const canvasRatio = w / h;
         let drawW, drawH, offsetX, offsetY;
 
-        if (w <= 768) {
-          // Mobile View: Fit full glass panel in center matching Image 2 without dark zoom crop
-          drawW = Math.max(w, h * imgRatio * 0.72);
-          drawH = drawW / imgRatio;
-          offsetX = (w - drawW) / 2;
-          offsetY = (h - drawH) / 2;
+        if (isMobileView) {
+          // Mobile View: Cover 100% of mobile viewport height & width using dedicated mobile frames
+          if (canvasRatio > imgRatio) {
+            drawW = w;
+            drawH = w / imgRatio;
+            offsetX = 0;
+            offsetY = (h - drawH) / 2;
+          } else {
+            drawH = h;
+            drawW = h * imgRatio;
+            offsetX = (w - drawW) / 2;
+            offsetY = 0;
+          }
         } else if (canvasRatio > imgRatio) {
           // Desktop Wide View
           drawW = w;
@@ -234,7 +251,7 @@ export default function Hero3DCanvas() {
         cancelAnimationFrame(animFrameIdRef.current);
       }
     };
-  }, [images]);
+  }, [desktopImages, mobileImages]);
 
   const loadPercentage = Math.round((loadedCount / TOTAL_FRAMES) * 100);
 
@@ -242,7 +259,7 @@ export default function Hero3DCanvas() {
   const storyStages = [
     {
       id: 'glass',
-      badge: 'TRIVANDRUM GLASS',
+      badge: 'TRAVANCORE GLASS',
       badgeBg: 'rgba(29, 78, 216, 0.35)',
       badgeBorder: 'rgba(96, 165, 250, 0.5)',
       badgeColor: '#60A5FA',
@@ -262,7 +279,7 @@ export default function Hero3DCanvas() {
       badgeColor: '#F59E0B',
       tagline: '',
       titleLine1: 'TOUGHENED GLASS &',
-      titleLine2: 'TRIVANDRUM GLASS SOLUTIONS',
+      titleLine2: 'TRAVANCORE GLASS SOLUTIONS',
       highlightColor: '#F59E0B',
       description1: '',
       description2: '',
@@ -289,6 +306,7 @@ export default function Hero3DCanvas() {
   return (
     <section
       ref={containerRef}
+      className="hero-3d-section-wrap"
       style={{
         position: 'relative',
         width: '100%',
@@ -302,6 +320,11 @@ export default function Hero3DCanvas() {
       }}
     >
       <style>{`
+        @media (max-width: 768px) {
+          .hero-3d-section-wrap {
+            background: #181A1F !important;
+          }
+        }
         @media (max-width: 900px) {
           .hero-3d-content-wrap {
             flex-direction: column !important;
@@ -585,7 +608,7 @@ export default function Hero3DCanvas() {
           zIndex: 25,
         }}
       >
-        <RotatingBadge size={155} number="65" subtext="YEARS" variant="light" text="TRIVANDRUM GLASS ★ 65 YEARS OF EXCELLENCE ★ " />
+        <RotatingBadge size={155} number="65" subtext="YEARS" variant="light" text="TRAVANCORE GLASS ★ 65 YEARS OF EXCELLENCE ★ " />
       </div>
     </section>
   );

@@ -99,7 +99,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', fontSize: '0.75rem', color: '#94A3B8' }}>
-          <div>© {new Date().getFullYear()} TRIVANDRUM GLASS & PLYWOOD. All Rights Reserved.</div>
+          <div>© {new Date().getFullYear()} TRAVANCORE GLASS & PLYWOOD. All Rights Reserved.</div>
           <div style={{ display: 'flex', gap: '1.5rem' }}>
             <Link to="/quality" style={{ color: 'inherit' }}>Privacy Policy</Link>
             <Link to="/quality" style={{ color: 'inherit' }}>Terms of Specification</Link>

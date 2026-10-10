@@ -14,32 +14,8 @@ export function AudioFXProvider({ children }) {
   }, [enabled]);
 
   const playTone = (freq = 600, duration = 0.04, type = 'sine') => {
-    if (!enabled) return;
-    try {
-      if (!audioCtxRef.current) {
-        const AudioContext = window.AudioContext || window.webkitAudioContext;
-        audioCtxRef.current = new AudioContext();
-      }
-      if (audioCtxRef.current.state === 'suspended') {
-        audioCtxRef.current.resume();
-      }
-
-      const osc = audioCtxRef.current.createOscillator();
-      const gain = audioCtxRef.current.createGain();
-
-      osc.type = type;
-      osc.frequency.setValueAtTime(freq, audioCtxRef.current.currentTime);
-      gain.gain.setValueAtTime(0.03, audioCtxRef.current.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.001, audioCtxRef.current.currentTime + duration);
-
-      osc.connect(gain);
-      gain.connect(audioCtxRef.current.destination);
-
-      osc.start();
-      osc.stop(audioCtxRef.current.currentTime + duration);
-    } catch {
-      // Ignore web audio errors
-    }
+    // Animation sound completely removed
+    return;
   };
 
   const toggleAudio = () => {

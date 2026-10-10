@@ -64,11 +64,6 @@ export default function Navbar() {
 
         {/* Right Actions & Utilities */}
         <div className="nav-actions">
-          {/* Desktop CTA Get Quote */}
-          <Link to="/contact" className="btn btn-royal btn-pill desktop-quote-btn">
-            GET A QUOTE →
-          </Link>
-
           {/* Mobile Menu Toggle Button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}

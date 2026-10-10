@@ -88,7 +88,7 @@ export default function Home() {
   ];
 
   return (
-    <div style={{ background: '#04070D', color: '#F8FAFC', overflowX: 'hidden' }}>
+    <div className="home-page-wrap" style={{ background: '#04070D', color: '#F8FAFC', overflowX: 'hidden' }}>
       {/* 3D Glass & Plywood Full-Screen Hero Canvas Scrubber */}
       <Hero3DCanvas />
 

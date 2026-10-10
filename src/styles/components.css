@@ -16,11 +16,10 @@
   transition: all 0.25s ease;
 }
 
-.navbar.scrolled {
-  padding-block: 0.4rem;
-  background: #04070D;
-  border-bottom-color: rgba(96, 165, 250, 0.25);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+@media (max-width: 768px) {
+  .navbar, .navbar.scrolled, .home-page-wrap {
+    background: #181A1F !important;
+  }
 }
 
 .navbar-inner {
