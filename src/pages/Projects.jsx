@@ -10,63 +10,63 @@ export default function Projects() {
   const projects = [
     {
       id: 'sandy-resort',
-      name: 'Sandy Resort',
+      name: 'SANDY RESORT',
       category: 'HOSPITALITY',
       location: 'Kovalam, Trivandrum',
       image: '/assets/images/sandy_resort.jpg'
     },
     {
       id: 'cdfc-hospital',
-      name: 'CDFC Hospital',
+      name: 'CDFC HOSPITAL',
       category: 'HEALTHCARE',
       location: 'Medical College Zone, Trivandrum',
       image: '/assets/images/cdfc_hospital.jpg'
     },
     {
       id: 'm-loft',
-      name: 'M Loft',
+      name: 'M LOFT',
       category: 'RESIDENTIAL',
       location: 'Kowdiar, Trivandrum',
       image: '/assets/images/m_loft.jpg'
     },
     {
       id: 'saint-gobain',
-      name: 'Saint Gobain',
+      name: 'SAINT GOBAIN',
       category: 'COMMERCIAL',
       location: 'Technopark Tech Zone, Trivandrum',
       image: '/assets/images/saint_gobain.jpg'
     },
     {
       id: 'cashify-store',
-      name: 'Cashify Store',
+      name: 'CASHIFY STORE',
       category: 'RETAIL',
       location: 'Lulu Mall, Trivandrum',
       image: '/assets/images/cashify_store.jpg'
     },
     {
       id: 'bewakoof-store',
-      name: 'Bewakoof Store',
+      name: 'BEWAKOOF STORE',
       category: 'RETAIL',
       location: 'Kazhakkoottam, Trivandrum',
       image: '/assets/images/bewakoof_store.jpg'
     },
     {
       id: 'the-indian-gauge',
-      name: 'The Indian Gauge',
+      name: 'THE INDIAN GAUGE',
       category: 'COMMERCIAL',
       location: 'Vellayambalam, Trivandrum',
       image: '/assets/images/indian_gauge.jpg'
     },
     {
       id: 'bose',
-      name: 'Bose',
+      name: 'BOSE',
       category: 'RETAIL',
       location: 'Mall of Travancore, Trivandrum',
       image: '/assets/images/bose_store.jpg'
     },
     {
       id: 'gg-pharmacies',
-      name: 'GG Pharmacies',
+      name: 'GG PHARMACIES',
       category: 'HEALTHCARE',
       location: 'Pattom, Trivandrum',
       image: '/assets/images/gg_pharmacies.jpg'
@@ -200,7 +200,7 @@ export default function Projects() {
 
                 {/* Card Content */}
                 <div style={{ padding: '1.35rem 1.5rem', display: 'flex', flexDirection: 'column', background: '#FFFFFF' }}>
-                  <h2 style={{ fontSize: '1.4rem', fontWeight: 900, color: '#1D4ED8', margin: 0, lineHeight: 1.25 }}>
+                  <h2 style={{ fontSize: '1.4rem', fontWeight: 900, color: '#1D4ED8', margin: 0, lineHeight: 1.25, textTransform: 'uppercase' }}>
                     {p.name}
                   </h2>
                 </div>

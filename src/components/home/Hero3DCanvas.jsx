@@ -82,9 +82,9 @@ export default function Hero3DCanvas() {
     const prog = frameIdx / (TOTAL_FRAMES - 1);
     setFrameProgress(prog);
 
-    if (prog < 0.35) {
+    if (prog < 0.33) {
       setActiveStage(0);
-    } else if (prog < 0.7) {
+    } else if (prog < 0.66) {
       setActiveStage(1);
     } else {
       setActiveStage(2);
@@ -271,46 +271,37 @@ export default function Hero3DCanvas() {
   // Story stages for left-aligned writings
   const storyStages = [
     {
-      id: 'glass',
-      badge: 'TRAVANCORE GLASS',
+      id: 'quality-glass',
+      stageNum: '01',
+      badge: 'ARCHITECTURAL GLASS',
       badgeBg: 'rgba(29, 78, 216, 0.35)',
       badgeBorder: 'rgba(96, 165, 250, 0.5)',
       badgeColor: '#60A5FA',
-      tagline: '',
-      titleLine1: 'PREMIUM GLASS & ARCHITECTURAL',
-      titleLine2: 'SOLUTIONS IN TRIVANDRUM',
+      title: 'Quality Glass',
+      description: 'High-performance toughened, laminated & acoustic glazing tailored for modern aesthetics.',
       highlightColor: '#60A5FA',
-      description1: '',
-      description2: '',
-      specs: [],
     },
     {
-      id: 'custom-glazing',
-      badge: 'ARCHITECTURAL GLAZING',
+      id: 'precision-engineering',
+      stageNum: '02',
+      badge: 'PRECISION CNC & SAFETY',
       badgeBg: 'rgba(217, 119, 6, 0.35)',
       badgeBorder: 'rgba(245, 158, 11, 0.5)',
       badgeColor: '#F59E0B',
-      tagline: '',
-      titleLine1: 'TOUGHENED GLASS &',
-      titleLine2: 'TRAVANCORE GLASS SOLUTIONS',
+      title: 'Precision Engineering',
+      description: 'State-of-the-art CNC processing, exact tolerances and rigorous safety testing standards.',
       highlightColor: '#F59E0B',
-      description1: '',
-      description2: '',
-      specs: [],
     },
     {
-      id: 'synergy',
-      badge: 'PRECISION & ELEGANCE',
+      id: 'professional-installation',
+      stageNum: '03',
+      badge: 'CERTIFIED EXECUTION',
       badgeBg: 'rgba(16, 185, 129, 0.35)',
       badgeBorder: 'rgba(52, 211, 153, 0.5)',
       badgeColor: '#34D399',
-      tagline: '',
-      titleLine1: 'SAFE, ELEGANT &',
-      titleLine2: 'FUNCTIONAL SPACES',
+      title: 'Professional Installation',
+      description: 'Certified installation engineering guaranteeing structural safety and flawless finishing.',
       highlightColor: '#34D399',
-      description1: '',
-      description2: '',
-      specs: [],
     },
   ];
 
@@ -426,6 +417,19 @@ export default function Hero3DCanvas() {
             transform-origin: bottom right !important;
           }
         }
+        @keyframes heroStageFadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(12px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .hero-stage-content {
+          animation: heroStageFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
       `}</style>
 
       {/* Big Full-Size 3D Canvas Background */}
@@ -457,131 +461,89 @@ export default function Hero3DCanvas() {
           alignItems: 'center',
         }}
       >
-        {/* LEFT WRITINGS - Direct Floating Text without surrounding box */}
-        <div className="hero-3d-writings-block" style={{ maxWidth: '560px', marginTop: '-5rem' }}>
-          {/* Main Headline */}
-          <h1
-            className="hero-3d-headline"
-            style={{
-              fontSize: 'clamp(2.2rem, 4.2vw, 3.5rem)',
-              fontWeight: 900,
-              lineHeight: 1.15,
-              letterSpacing: '-0.02em',
-              marginBottom: '0.85rem',
-            }}
-          >
-            <span style={{
-              background: 'linear-gradient(135deg, #FFFFFF 0%, #F1F5F9 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              display: 'block'
-            }}>
-              Premium Glass
-            </span>
-            <span style={{
-              background: 'linear-gradient(135deg, #BAE6FD 0%, #38BDF8 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              display: 'block'
-            }}>
-              & Architectural
-            </span>
-            <span style={{
-              background: 'linear-gradient(135deg, #FEF08A 0%, #FACC15 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              display: 'inline-block',
-              marginRight: '0.35em'
-            }}>
-              Solutions
-            </span>
-            <span style={{
-              color: '#FFFFFF',
-              display: 'inline-block'
-            }}>
-              in Trivandrum
-            </span>
-          </h1>
-
-          {/* Tagline Sub-heading */}
-          {Boolean(currentStageData.tagline) && (
+        {/* LEFT WRITINGS - Dynamic Content Updating on Scroll */}
+        <div className="hero-3d-writings-block" style={{ maxWidth: '580px', marginTop: '-4rem' }}>
+          <div key={currentStageData.id} className="hero-stage-content">
+            {/* Stage Indicator Badge */}
             <div
-              style={{
-                fontSize: 'clamp(1rem, 2vw, 1.2rem)',
-                fontWeight: 800,
-                color: currentStageData.highlightColor,
-                marginBottom: '1rem',
-                letterSpacing: '0.02em',
-                textShadow: '0 2px 10px rgba(0, 0, 0, 0.9)',
-              }}
-            >
-              {currentStageData.tagline}
-            </div>
-          )}
-
-          {/* Description Paragraph 1 */}
-          {Boolean(currentStageData.description1) && (
-            <p
-              className="hero-3d-desc"
-              style={{
-                fontSize: '1rem',
-                color: '#E2E8F0',
-                lineHeight: 1.6,
-                marginBottom: '0.625rem',
-                fontWeight: 400,
-                textShadow: '0 2px 10px rgba(0, 0, 0, 0.9)',
-              }}
-            >
-              {currentStageData.description1}
-            </p>
-          )}
-
-          {/* Description Paragraph 2 */}
-          {Boolean(currentStageData.description2) && (
-            <p
-              className="hero-3d-desc"
-              style={{
-                fontSize: '0.9375rem',
-                color: '#CBD5E1',
-                lineHeight: 1.55,
-                marginBottom: '1.25rem',
-                fontWeight: 400,
-                textShadow: '0 2px 10px rgba(0, 0, 0, 0.9)',
-              }}
-            >
-              {currentStageData.description2}
-            </p>
-          )}
-
-          {/* Specs Pills Strip */}
-          {Boolean(currentStageData.specs && currentStageData.specs.length > 0) && (
-            <div
-              className="hero-3d-specs-strip"
               style={{
                 display: 'inline-flex',
-                gap: '1.25rem',
-                padding: '0.65rem 1.25rem',
-                background: 'rgba(8, 12, 20, 0.65)',
-                border: '1px solid rgba(255, 255, 255, 0.12)',
-                backdropFilter: 'blur(12px)',
-                borderRadius: '16px',
+                alignItems: 'center',
+                gap: '0.6rem',
+                padding: '0.42rem 1.1rem',
+                borderRadius: '9999px',
+                background: currentStageData.badgeBg,
+                border: `1px solid ${currentStageData.badgeBorder}`,
+                color: currentStageData.badgeColor,
+                fontSize: '0.75rem',
+                fontWeight: 800,
+                letterSpacing: '0.08em',
                 marginBottom: '1.25rem',
+                backdropFilter: 'blur(10px)',
+                boxShadow: `0 4px 18px ${currentStageData.badgeBg}`,
               }}
             >
-              {currentStageData.specs.map((sp, idx) => (
-                <div key={idx}>
-                  <div style={{ fontSize: '0.625rem', color: '#94A3B8', fontWeight: 700, textTransform: 'uppercase' }}>
-                    {sp.label}
-                  </div>
-                  <div style={{ fontSize: '0.875rem', fontWeight: 900, color: '#F8FAFC', marginTop: '2px' }}>
-                    {sp.val}
-                  </div>
-                </div>
-              ))}
+              <Sparkles size={14} />
+              <span>STAGE {currentStageData.stageNum} / 03 • {currentStageData.badge}</span>
             </div>
-          )}
 
+            {/* Dynamic Headline */}
+            <h1
+              className="hero-3d-headline"
+              style={{
+                fontSize: 'clamp(2.4rem, 4.5vw, 3.85rem)',
+                fontWeight: 900,
+                lineHeight: 1.15,
+                letterSpacing: '-0.02em',
+                marginBottom: '1rem',
+                textShadow: '0 4px 25px rgba(0, 0, 0, 0.85)',
+              }}
+            >
+              <span
+                style={{
+                  background: `linear-gradient(135deg, #FFFFFF 40%, ${currentStageData.highlightColor} 100%)`,
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  display: 'block',
+                }}
+              >
+                {currentStageData.title}
+              </span>
+            </h1>
 
+            {/* Dynamic Description */}
+            <p
+              className="hero-3d-desc"
+              style={{
+                fontSize: 'clamp(1rem, 1.8vw, 1.18rem)',
+                color: '#E2E8F0',
+                lineHeight: 1.65,
+                maxWidth: '540px',
+                fontWeight: 500,
+                textShadow: '0 2px 14px rgba(0, 0, 0, 0.95)',
+                margin: 0,
+              }}
+            >
+              {currentStageData.description}
+            </p>
+          </div>
+
+          {/* Stage Progress Indicators */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginTop: '1.75rem' }}>
+            {storyStages.map((stg, i) => (
+              <div
+                key={stg.id}
+                style={{
+                  height: '4px',
+                  width: activeStage === i ? '42px' : '14px',
+                  borderRadius: '9999px',
+                  background: activeStage === i ? stg.highlightColor : 'rgba(255, 255, 255, 0.25)',
+                  boxShadow: activeStage === i ? `0 0 12px ${stg.highlightColor}` : 'none',
+                  transition: 'all 0.35s ease',
+                }}
+              />
+            ))}
+          </div>
         </div>
       </div>
 

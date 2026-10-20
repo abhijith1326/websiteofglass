@@ -4,9 +4,9 @@ import { Award, Calendar, Sparkles, ShieldCheck, HeartHandshake, CheckCircle2, U
 export default function AboutUs() {
   return (
     <div style={{
-      background: 'linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 20%, #F1F5F9 50%, #FFFFFF 80%, #EFF6FF 100%)',
+      background: '#1A2463',
       minHeight: '100vh',
-      color: '#0F172A',
+      color: '#FFFFFF',
       position: 'relative',
       padding: '4rem 1.5rem 6rem 1.5rem'
     }}>
@@ -17,7 +17,7 @@ export default function AboutUs() {
         left: 0,
         right: 0,
         height: '340px',
-        background: 'radial-gradient(ellipse at top, rgba(37, 99, 235, 0.08) 0%, rgba(255, 255, 255, 0) 75%)',
+        background: 'radial-gradient(ellipse at top, rgba(255, 255, 255, 0.12) 0%, rgba(26, 36, 99, 0) 75%)',
         pointerEvents: 'none'
       }} />
 
@@ -29,32 +29,33 @@ export default function AboutUs() {
             display: 'inline-flex',
             alignItems: 'center',
             gap: '0.5rem',
-            color: '#1D4ED8',
+            color: '#FFFFFF',
             fontSize: '0.8125rem',
             fontWeight: 800,
             textTransform: 'uppercase',
             letterSpacing: '0.15em',
             marginBottom: '1rem',
-            background: '#EFF6FF',
+            background: 'rgba(255, 255, 255, 0.14)',
             padding: '0.4rem 1.15rem',
             borderRadius: '9999px',
-            border: '1px solid #BFDBFE'
+            border: '1px solid rgba(255, 255, 255, 0.3)',
+            backdropFilter: 'blur(8px)'
           }}>
-            <Award size={16} color="#1D4ED8" /> ABOUT TRIVANDRUM GLASS & PLYWOODS
+            <Award size={16} color="#FFFFFF" /> ABOUT TRIVANDRUM GLASS & PLYWOODS
           </div>
 
           <h1 style={{
             fontFamily: "'Playfair Display', Georgia, serif",
             fontSize: 'clamp(2.5rem, 5vw, 3.8rem)',
             fontWeight: 900,
-            color: '#1D4ED8',
+            color: '#FFFFFF',
             lineHeight: 1.15,
             margin: '0 0 1rem 0',
             letterSpacing: '-0.02em'
           }}>
             Our History, Heritage & Leadership
           </h1>
-          <p style={{ color: '#475569', fontSize: 'clamp(1.05rem, 2vw, 1.25rem)', maxWidth: '760px', margin: '0 auto', lineHeight: 1.6, fontWeight: 500 }}>
+          <p style={{ color: '#DBEAFE', fontSize: 'clamp(1.05rem, 2vw, 1.25rem)', maxWidth: '760px', margin: '0 auto', lineHeight: 1.6, fontWeight: 500 }}>
             Preserving a legacy since 1963, embracing the future, and building trust for generations to come.
           </p>
         </div>
@@ -76,9 +77,9 @@ export default function AboutUs() {
             <div style={{
               borderRadius: '24px',
               overflow: 'hidden',
-              boxShadow: '0 20px 45px rgba(37, 99, 235, 0.15)',
-              border: '4px solid #FFFFFF',
-              background: '#FFFFFF',
+              boxShadow: '0 20px 45px rgba(0, 0, 0, 0.25)',
+              border: '4px solid rgba(255, 255, 255, 0.35)',
+              background: 'rgba(255, 255, 255, 0.1)',
               position: 'relative'
             }}>
               <img
@@ -95,7 +96,8 @@ export default function AboutUs() {
             {/* Founder Badge directly under picture */}
             <div style={{
               marginTop: '1.25rem',
-              background: 'linear-gradient(135deg, #0A2540 0%, #1D4ED8 100%)',
+              background: 'linear-gradient(135deg, #0A2540 0%, #0F172A 100%)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
               color: '#FFFFFF',
               padding: '1rem 1.35rem',
               borderRadius: '16px',
@@ -120,23 +122,23 @@ export default function AboutUs() {
 
             {/* SUB-SECTION 1 */}
             <div>
-              <div style={{ color: '#2563EB', fontSize: '0.8125rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.14em', marginBottom: '0.4rem' }}>
+              <div style={{ color: '#93C5FD', fontSize: '0.8125rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.14em', marginBottom: '0.4rem' }}>
                 FOUNDER'S LEGACY —
               </div>
               <h2 style={{
                 fontFamily: "'Playfair Display', Georgia, serif",
                 fontSize: 'clamp(2rem, 3.5vw, 2.75rem)',
                 fontWeight: 900,
-                color: '#1D4ED8',
+                color: '#FFFFFF',
                 margin: '0 0 1.25rem 0',
                 lineHeight: 1.15
               }}>
                 The Founder’s Vision
               </h2>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#334155', fontSize: '1.025rem', lineHeight: 1.75 }}>
-                <p style={{ margin: 0, fontSize: '1.075rem', fontWeight: 600, color: '#1E293B' }}>
-                  A. M. Hassan founded <strong style={{ color: '#1D4ED8' }}>S.N.B Mirror Mart in 1963</strong> with a simple yet meaningful vision: to turn honest craftsmanship into products that customers could trust.
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#E0E7FF', fontSize: '1.025rem', lineHeight: 1.75 }}>
+                <p style={{ margin: 0, fontSize: '1.075rem', fontWeight: 600, color: '#FFFFFF' }}>
+                  A. M. Hassan founded <strong style={{ color: '#FFFFFF' }}>S.N.B Mirror Mart in 1963</strong> with a simple yet meaningful vision: to turn honest craftsmanship into products that customers could trust.
                 </p>
 
                 <p style={{ margin: 0 }}>
@@ -144,27 +146,27 @@ export default function AboutUs() {
                 </p>
 
                 <p style={{ margin: 0 }}>
-                  From the <strong style={{ color: '#1D4ED8' }}>Pappanamcode Industrial Estate</strong>, he began his journey by transforming plain sheets of glass into carefully finished mirrors. With attention to detail, precision, and dedication to his craft, he established a standard of workmanship that became an important part of the company's identity.
+                  From the <strong style={{ color: '#FFFFFF' }}>Pappanamcode Industrial Estate</strong>, he began his journey by transforming plain sheets of glass into carefully finished mirrors. With attention to detail, precision, and dedication to his craft, he established a standard of workmanship that became an important part of the company's identity.
                 </p>
               </div>
             </div>
 
 
             {/* SUB-SECTION 2 */}
-            <div style={{ borderTop: '1px solid #E2E8F0', paddingTop: '2rem' }}>
+            <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.2)', paddingTop: '2rem' }}>
               <h3 style={{
                 fontFamily: "'Playfair Display', Georgia, serif",
                 fontSize: 'clamp(1.5rem, 2.5vw, 2rem)',
                 fontWeight: 800,
-                color: '#1D4ED8',
+                color: '#FFFFFF',
                 margin: '0 0 1rem 0'
               }}>
                 Building Through Trust and Craftsmanship
               </h3>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#334155', fontSize: '1.025rem', lineHeight: 1.75 }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#E0E7FF', fontSize: '1.025rem', lineHeight: 1.75 }}>
                 <p style={{ margin: 0 }}>
-                  For A. M. Hassan, the foundation of a successful business went beyond products and transactions. It was built through <strong style={{ color: '#1D4ED8' }}>dedication, fair dealings, consistency, and the confidence of customers</strong>.
+                  For A. M. Hassan, the foundation of a successful business went beyond products and transactions. It was built through <strong style={{ color: '#FFFFFF' }}>dedication, fair dealings, consistency, and the confidence of customers</strong>.
                 </p>
 
                 <p style={{ margin: 0 }}>
@@ -179,24 +181,24 @@ export default function AboutUs() {
 
 
             {/* SUB-SECTION 3 */}
-            <div style={{ borderTop: '1px solid #E2E8F0', paddingTop: '2rem' }}>
+            <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.2)', paddingTop: '2rem' }}>
               <h3 style={{
                 fontFamily: "'Playfair Display', Georgia, serif",
                 fontSize: 'clamp(1.5rem, 2.5vw, 2rem)',
                 fontWeight: 800,
-                color: '#1D4ED8',
+                color: '#FFFFFF',
                 margin: '0 0 1rem 0'
               }}>
                 A Vision That Went Beyond Mirrors
               </h3>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#334155', fontSize: '1.025rem', lineHeight: 1.75 }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#E0E7FF', fontSize: '1.025rem', lineHeight: 1.75 }}>
                 <p style={{ margin: 0 }}>
                   Although mirrors were at the heart of the early business, A. M. Hassan's vision was much broader.
                 </p>
 
                 <p style={{ margin: 0 }}>
-                  He understood that a lasting business is not created simply by selling products. It is created by establishing a <strong style={{ color: '#1D4ED8' }}>name that people remember, trust, and confidently return to</strong>.
+                  He understood that a lasting business is not created simply by selling products. It is created by establishing a <strong style={{ color: '#FFFFFF' }}>name that people remember, trust, and confidently return to</strong>.
                 </p>
 
                 <p style={{ margin: 0 }}>
@@ -211,18 +213,18 @@ export default function AboutUs() {
 
 
             {/* SUB-SECTION 4 */}
-            <div style={{ borderTop: '1px solid #E2E8F0', paddingTop: '2rem' }}>
+            <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.2)', paddingTop: '2rem' }}>
               <h3 style={{
                 fontFamily: "'Playfair Display', Georgia, serif",
                 fontSize: 'clamp(1.5rem, 2.5vw, 2rem)',
                 fontWeight: 800,
-                color: '#1D4ED8',
+                color: '#FFFFFF',
                 margin: '0 0 1rem 0'
               }}>
                 A Legacy Passed Through Generations
               </h3>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#334155', fontSize: '1.025rem', lineHeight: 1.75 }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#E0E7FF', fontSize: '1.025rem', lineHeight: 1.75 }}>
                 <p style={{ margin: 0 }}>
                   As the years passed, the business continued to evolve. Markets changed, customer expectations developed, and the applications of glass and other building materials expanded.
                 </p>
@@ -236,7 +238,7 @@ export default function AboutUs() {
                 </p>
 
                 <p style={{ margin: 0 }}>
-                  That legacy continued through the next generation and eventually contributed to the establishment of <strong style={{ color: '#1D4ED8' }}>Trivandrum Glass and Plywoods in 2020</strong>, expanding the family's journey into glass, mirrors, plywood, and related interior and architectural solutions.
+                  That legacy continued through the next generation and eventually contributed to the establishment of <strong style={{ color: '#FFFFFF' }}>Trivandrum Glass and Plywoods in 2020</strong>, expanding the family's journey into glass, mirrors, plywood, and related interior and architectural solutions.
                 </p>
 
                 <p style={{ margin: 0 }}>
@@ -247,24 +249,24 @@ export default function AboutUs() {
 
 
             {/* SUB-SECTION 5 */}
-            <div style={{ borderTop: '1px solid #E2E8F0', paddingTop: '2rem' }}>
+            <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.2)', paddingTop: '2rem' }}>
               <h3 style={{
                 fontFamily: "'Playfair Display', Georgia, serif",
                 fontSize: 'clamp(1.5rem, 2.5vw, 2rem)',
                 fontWeight: 800,
-                color: '#1D4ED8',
+                color: '#FFFFFF',
                 margin: '0 0 1rem 0'
               }}>
                 From 1963 to the Future
               </h3>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#334155', fontSize: '1.025rem', lineHeight: 1.75 }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#E0E7FF', fontSize: '1.025rem', lineHeight: 1.75 }}>
                 <p style={{ margin: 0 }}>
                   More than six decades after S.N.B Mirror Mart began its journey, the principles that shaped its foundation continue to influence the way we work.
                 </p>
 
                 <p style={{ margin: 0 }}>
-                  The tools and products may have changed. The industry may have evolved. But the importance of <strong style={{ color: '#1D4ED8' }}>quality, integrity, craftsmanship, and trust</strong> remains the same.
+                  The tools and products may have changed. The industry may have evolved. But the importance of <strong style={{ color: '#FFFFFF' }}>quality, integrity, craftsmanship, and trust</strong> remains the same.
                 </p>
 
                 <p style={{ margin: 0 }}>
@@ -279,18 +281,18 @@ export default function AboutUs() {
 
 
             {/* SUB-SECTION 6 */}
-            <div style={{ borderTop: '1px solid #E2E8F0', paddingTop: '2rem' }}>
+            <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.2)', paddingTop: '2rem' }}>
               <h3 style={{
                 fontFamily: "'Playfair Display', Georgia, serif",
                 fontSize: 'clamp(1.5rem, 2.5vw, 2rem)',
                 fontWeight: 800,
-                color: '#1D4ED8',
+                color: '#FFFFFF',
                 margin: '0 0 1.25rem 0'
               }}>
                 A Legacy That Lives On
               </h3>
 
-              <p style={{ color: '#334155', fontSize: '1.025rem', lineHeight: 1.75, margin: '0 0 1.25rem 0' }}>
+              <p style={{ color: '#E0E7FF', fontSize: '1.025rem', lineHeight: 1.75, margin: '0 0 1.25rem 0' }}>
                 The legacy of A. M. Hassan lives on in more than the history of S.N.B Mirror Mart:
               </p>
 
@@ -303,21 +305,21 @@ export default function AboutUs() {
                   'And it lives in the determination to keep moving forward without forgetting where the journey began.'
                 ].map((item, idx) => (
                   <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
-                    <CheckCircle2 size={20} color="#1D4ED8" style={{ flexShrink: 0, marginTop: '2px' }} />
-                    <span style={{ color: '#1E293B', fontSize: '1rem', fontWeight: 600, lineHeight: 1.6 }}>
+                    <CheckCircle2 size={20} color="#93C5FD" style={{ flexShrink: 0, marginTop: '2px' }} />
+                    <span style={{ color: '#FFFFFF', fontSize: '1rem', fontWeight: 600, lineHeight: 1.6 }}>
                       {item}
                     </span>
                   </div>
                 ))}
               </div>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#334155', fontSize: '1.025rem', lineHeight: 1.75 }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#E0E7FF', fontSize: '1.025rem', lineHeight: 1.75 }}>
                 <p style={{ margin: 0 }}>
-                  From the early days at <strong style={{ color: '#1D4ED8' }}>Pappanamcode Industrial Estate</strong> to the continuing journey of <strong style={{ color: '#1D4ED8' }}>Trivandrum Glass and Plywoods</strong>, the story remains one of craftsmanship, perseverance, family, and trust.
+                  From the early days at <strong style={{ color: '#FFFFFF' }}>Pappanamcode Industrial Estate</strong> to the continuing journey of <strong style={{ color: '#FFFFFF' }}>Trivandrum Glass and Plywoods</strong>, the story remains one of craftsmanship, perseverance, family, and trust.
                 </p>
 
                 <p style={{ margin: 0 }}>
-                  What began in <strong style={{ color: '#1D4ED8' }}>1963</strong> as a vision rooted in honest workmanship has grown into a legacy carried forward across generations.
+                  What began in <strong style={{ color: '#FFFFFF' }}>1963</strong> as a vision rooted in honest workmanship has grown into a legacy carried forward across generations.
                 </p>
               </div>
             </div>
@@ -325,7 +327,9 @@ export default function AboutUs() {
 
             {/* CLOSING HIGHLIGHT BLUE BANNER 1 */}
             <div style={{
-              background: 'linear-gradient(135deg, #1E3A8A 0%, #1D4ED8 100%)',
+              background: 'linear-gradient(135deg, rgba(10, 37, 64, 0.88) 0%, rgba(15, 23, 42, 0.92) 100%)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+              backdropFilter: 'blur(12px)',
               color: '#FFFFFF',
               borderRadius: '20px',
               padding: '2rem 2.25rem',
@@ -361,7 +365,7 @@ export default function AboutUs() {
         {/* SECTION 2: A MESSAGE FROM THE CHAIRMAN (CONTENT LEFT, IMAGE RIGHT)         */}
         {/* ========================================================================= */}
         <div style={{
-          borderTop: '2px dashed #CBD5E1',
+          borderTop: '2px dashed rgba(255, 255, 255, 0.25)',
           paddingTop: '5rem',
           marginBottom: '6rem'
         }}>
@@ -378,27 +382,27 @@ export default function AboutUs() {
 
               {/* HEADER */}
               <div>
-                <div style={{ color: '#2563EB', fontSize: '0.8125rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.14em', marginBottom: '0.4rem' }}>
+                <div style={{ color: '#93C5FD', fontSize: '0.8125rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.14em', marginBottom: '0.4rem' }}>
                   CHAIRMAN'S MESSAGE —
                 </div>
                 <h2 style={{
                   fontFamily: "'Playfair Display', Georgia, serif",
                   fontSize: 'clamp(2rem, 3.5vw, 2.75rem)',
                   fontWeight: 900,
-                  color: '#1D4ED8',
+                  color: '#FFFFFF',
                   margin: '0 0 1.25rem 0',
                   lineHeight: 1.15
                 }}>
                   A Message from the Chairman
                 </h2>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#334155', fontSize: '1.025rem', lineHeight: 1.75 }}>
-                  <p style={{ margin: 0, fontSize: '1.075rem', fontWeight: 600, color: '#1E293B' }}>
-                    At <strong style={{ color: '#1D4ED8' }}>Trivandrum Glass and Plywoods</strong>, our journey represents more than six decades of hard work, dedication, craftsmanship, and trust. It is a journey shaped by generations of our family, by the relationships we have built with our customers, and by a commitment to maintaining the values on which our business was founded.
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#E0E7FF', fontSize: '1.025rem', lineHeight: 1.75 }}>
+                  <p style={{ margin: 0, fontSize: '1.075rem', fontWeight: 600, color: '#FFFFFF' }}>
+                    At <strong style={{ color: '#FFFFFF' }}>Trivandrum Glass and Plywoods</strong>, our journey represents more than six decades of hard work, dedication, craftsmanship, and trust. It is a journey shaped by generations of our family, by the relationships we have built with our customers, and by a commitment to maintaining the values on which our business was founded.
                   </p>
 
                   <p style={{ margin: 0 }}>
-                    Our story began in <strong style={{ color: '#1D4ED8' }}>1963</strong>, when my father, <strong style={{ color: '#1D4ED8' }}>A. M. Hassan</strong>, founded <strong style={{ color: '#1D4ED8' }}>S.N.B Mirror Mart</strong>. With his dedication to quality workmanship and honest service, he laid the foundation for what would become a lasting family legacy.
+                    Our story began in <strong style={{ color: '#FFFFFF' }}>1963</strong>, when my father-in-law, <strong style={{ color: '#FFFFFF' }}>A. M. Hassan</strong>, founded <strong style={{ color: '#FFFFFF' }}>S.N.B Mirror Mart</strong>. With his dedication to quality workmanship and honest service, he laid the foundation for what would become a lasting family legacy.
                   </p>
 
                   <p style={{ margin: 0 }}>
@@ -409,24 +413,24 @@ export default function AboutUs() {
 
 
               {/* CONTINUING THE FAMILY LEGACY */}
-              <div style={{ borderTop: '1px solid #E2E8F0', paddingTop: '2rem' }}>
+              <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.2)', paddingTop: '2rem' }}>
                 <h3 style={{
                   fontFamily: "'Playfair Display', Georgia, serif",
                   fontSize: 'clamp(1.5rem, 2.5vw, 2rem)',
                   fontWeight: 800,
-                  color: '#1D4ED8',
+                  color: '#FFFFFF',
                   margin: '0 0 1rem 0'
                 }}>
                   Continuing the Family Legacy
                 </h3>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#334155', fontSize: '1.025rem', lineHeight: 1.75 }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#E0E7FF', fontSize: '1.025rem', lineHeight: 1.75 }}>
                   <p style={{ margin: 0 }}>
-                    I had the privilege of carrying this legacy forward from <strong style={{ color: '#1D4ED8' }}>2000 onwards</strong>. Over the years, I witnessed the industry change, customer expectations evolve, and new opportunities emerge.
+                    I had the privilege of carrying this legacy forward from <strong style={{ color: '#FFFFFF' }}>2000 onwards</strong>. Over the years, I witnessed the industry change, customer expectations evolve, and new opportunities emerge.
                   </p>
 
                   <p style={{ margin: 0 }}>
-                    With the experience gained through those years, we took an important step in <strong style={{ color: '#1D4ED8' }}>2020</strong> by establishing <strong style={{ color: '#1D4ED8' }}>Trivandrum Glass and Plywoods</strong>.
+                    With the experience gained through those years, we took an important step in <strong style={{ color: '#FFFFFF' }}>2020</strong> by establishing <strong style={{ color: '#FFFFFF' }}>Trivandrum Glass and Plywoods</strong>.
                   </p>
 
                   <p style={{ margin: 0 }}>
@@ -434,10 +438,10 @@ export default function AboutUs() {
                   </p>
 
                   <p style={{ margin: 0 }}>
-                    Our focus expanded beyond mirrors to include a wider range of <strong style={{ color: '#1D4ED8' }}>glass, mirrors, plywood, and interior and architectural solutions</strong>, enabling us to serve the changing needs of homes, businesses, designers, builders, architects, and other customers.
+                    Our focus expanded beyond mirrors to include a wider range of <strong style={{ color: '#FFFFFF' }}>glass, mirrors, plywood, and interior and architectural solutions</strong>, enabling us to serve the changing needs of homes, businesses, designers, builders, architects, and other customers.
                   </p>
 
-                  <p style={{ margin: 0, fontWeight: 700, color: '#1E3A8A' }}>
+                  <p style={{ margin: 0, fontWeight: 700, color: '#FFFFFF' }}>
                     Throughout this journey, one principle has remained constant: quality and trust must always come first.
                   </p>
                 </div>
@@ -445,18 +449,18 @@ export default function AboutUs() {
 
 
               {/* OUR COMMITMENT TO CUSTOMERS */}
-              <div style={{ borderTop: '1px solid #E2E8F0', paddingTop: '2rem' }}>
+              <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.2)', paddingTop: '2rem' }}>
                 <h3 style={{
                   fontFamily: "'Playfair Display', Georgia, serif",
                   fontSize: 'clamp(1.5rem, 2.5vw, 2rem)',
                   fontWeight: 800,
-                  color: '#1D4ED8',
+                  color: '#FFFFFF',
                   margin: '0 0 1rem 0'
                 }}>
                   Our Commitment to Customers
                 </h3>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#334155', fontSize: '1.025rem', lineHeight: 1.75 }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#E0E7FF', fontSize: '1.025rem', lineHeight: 1.75 }}>
                   <p style={{ margin: 0 }}>
                     We understand that the products we provide are often an important part of a larger project. Whether it is a home, office, commercial space, architectural development, or interior project, customers depend on us not only for products but also for reliable guidance and service.
                   </p>
@@ -477,20 +481,20 @@ export default function AboutUs() {
 
 
               {/* LOOKING TOWARDS THE NEXT GENERATION */}
-              <div style={{ borderTop: '1px solid #E2E8F0', paddingTop: '2rem' }}>
+              <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.2)', paddingTop: '2rem' }}>
                 <h3 style={{
                   fontFamily: "'Playfair Display', Georgia, serif",
                   fontSize: 'clamp(1.5rem, 2.5vw, 2rem)',
                   fontWeight: 800,
-                  color: '#1D4ED8',
+                  color: '#FFFFFF',
                   margin: '0 0 1rem 0'
                 }}>
                   Looking Towards the Next Generation
                 </h3>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#334155', fontSize: '1.025rem', lineHeight: 1.75 }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#E0E7FF', fontSize: '1.025rem', lineHeight: 1.75 }}>
                   <p style={{ margin: 0 }}>
-                    Today, I am proud to see the <strong style={{ color: '#1D4ED8' }}>next generation becoming part of this journey</strong>.
+                    Today, I am proud to see the <strong style={{ color: '#FFFFFF' }}>next generation becoming part of this journey</strong>.
                   </p>
 
                   <p style={{ margin: 0 }}>
@@ -502,7 +506,7 @@ export default function AboutUs() {
                   </p>
 
                   <p style={{ margin: 0 }}>
-                    At the same time, we will continue to protect the principles that have guided our family since 1963 — <strong style={{ color: '#1D4ED8' }}>honesty, quality, commitment, respect, and trust</strong>.
+                    At the same time, we will continue to protect the principles that have guided our family since 1963 — <strong style={{ color: '#FFFFFF' }}>honesty, quality, commitment, respect, and trust</strong>.
                   </p>
 
                   <p style={{ margin: 0 }}>
@@ -513,20 +517,20 @@ export default function AboutUs() {
 
 
               {/* BUILDING THE FUTURE TOGETHER */}
-              <div style={{ borderTop: '1px solid #E2E8F0', paddingTop: '2rem' }}>
+              <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.2)', paddingTop: '2rem' }}>
                 <h3 style={{
                   fontFamily: "'Playfair Display', Georgia, serif",
                   fontSize: 'clamp(1.5rem, 2.5vw, 2rem)',
                   fontWeight: 800,
-                  color: '#1D4ED8',
+                  color: '#FFFFFF',
                   margin: '0 0 1rem 0'
                 }}>
                   Building the Future Together
                 </h3>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#334155', fontSize: '1.025rem', lineHeight: 1.75 }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#E0E7FF', fontSize: '1.025rem', lineHeight: 1.75 }}>
                   <p style={{ margin: 0 }}>
-                    The journey from <strong style={{ color: '#1D4ED8' }}>S.N.B Mirror Mart in 1963</strong> to <strong style={{ color: '#1D4ED8' }}>Trivandrum Glass and Plywoods today</strong> has been shaped by the efforts of many people — our family, employees, customers, suppliers, craftsmen, business partners, and everyone who has supported us along the way.
+                    The journey from <strong style={{ color: '#FFFFFF' }}>S.N.B Mirror Mart in 1963</strong> to <strong style={{ color: '#FFFFFF' }}>Trivandrum Glass and Plywoods today</strong> has been shaped by the efforts of many people — our family, employees, customers, suppliers, craftsmen, business partners, and everyone who has supported us along the way.
                   </p>
 
                   <p style={{ margin: 0 }}>
@@ -534,7 +538,7 @@ export default function AboutUs() {
                   </p>
 
                   <p style={{ margin: 0 }}>
-                    As we look towards the future, our goal is not simply to become bigger, but to become <strong style={{ color: '#1D4ED8' }}>better</strong> — better in the products we offer, better in the service we provide, and better in the value we create for our customers.
+                    As we look towards the future, our goal is not simply to become bigger, but to become <strong style={{ color: '#FFFFFF' }}>better</strong> — better in the products we offer, better in the service we provide, and better in the value we create for our customers.
                   </p>
 
                   <p style={{ margin: 0 }}>
@@ -545,28 +549,28 @@ export default function AboutUs() {
 
 
               {/* A PROMISE FOR THE FUTURE */}
-              <div style={{ borderTop: '1px solid #E2E8F0', paddingTop: '2rem' }}>
+              <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.2)', paddingTop: '2rem' }}>
                 <h3 style={{
                   fontFamily: "'Playfair Display', Georgia, serif",
                   fontSize: 'clamp(1.5rem, 2.5vw, 2rem)',
                   fontWeight: 800,
-                  color: '#1D4ED8',
+                  color: '#FFFFFF',
                   margin: '0 0 1rem 0'
                 }}>
                   A Promise for the Future
                 </h3>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#334155', fontSize: '1.025rem', lineHeight: 1.75 }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#E0E7FF', fontSize: '1.025rem', lineHeight: 1.75 }}>
                   <p style={{ margin: 0 }}>
                     The business landscape may continue to change, but our commitment remains unchanged.
                   </p>
 
                   <p style={{ margin: 0 }}>
-                    We will continue to provide <strong style={{ color: '#1D4ED8' }}>quality products, dependable service, honest guidance, and genuine value</strong> to every customer.
+                    We will continue to provide <strong style={{ color: '#FFFFFF' }}>quality products, dependable service, honest guidance, and genuine value</strong> to every customer.
                   </p>
 
                   <p style={{ margin: 0 }}>
-                    We will continue to respect the legacy established by my father while giving the next generation the opportunity to build upon it.
+                    We will continue to respect the legacy established by my father-in-law while giving the next generation the opportunity to build upon it.
                   </p>
 
                   <p style={{ margin: 0 }}>
@@ -582,7 +586,9 @@ export default function AboutUs() {
 
               {/* CLOSING HIGHLIGHT BLUE BANNER FOR CHAIRMAN */}
               <div style={{
-                background: 'linear-gradient(135deg, #0A2540 0%, #1E3A8A 100%)',
+                background: 'linear-gradient(135deg, rgba(10, 37, 64, 0.88) 0%, rgba(15, 23, 42, 0.92) 100%)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+              backdropFilter: 'blur(12px)',
                 color: '#FFFFFF',
                 borderRadius: '20px',
                 padding: '2rem 2.25rem',
@@ -627,20 +633,21 @@ export default function AboutUs() {
             {/* RIGHT SIDE: STICKY PICTURE FOR CHAIRMAN */}
             <div style={{ position: 'sticky', top: '100px' }}>
               <div style={{
-                borderRadius: '24px',
-                overflow: 'hidden',
-                boxShadow: '0 20px 45px rgba(37, 99, 235, 0.15)',
-                border: '4px solid #FFFFFF',
-                background: '#FFFFFF',
-                position: 'relative'
+                background: 'radial-gradient(ellipse at center, rgba(59, 130, 246, 0.22) 0%, rgba(26, 36, 99, 0) 72%)',
+                position: 'relative',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                padding: '0.5rem 0'
               }}>
                 <img
-                  src="/assets/images/chairman_message.jpg"
+                  src="/assets/images/chairman_message.png"
                   alt="S. Maheen - Chairman"
                   style={{
                     width: '100%',
                     height: 'auto',
-                    display: 'block'
+                    display: 'block',
+                    filter: 'drop-shadow(0 20px 35px rgba(0, 0, 0, 0.45))'
                   }}
                 />
               </div>
@@ -648,7 +655,8 @@ export default function AboutUs() {
               {/* Badge directly under Chairman image */}
               <div style={{
                 marginTop: '1.25rem',
-                background: 'linear-gradient(135deg, #1D4ED8 0%, #1E3A8A 100%)',
+                background: 'linear-gradient(135deg, #0A2540 0%, #0F172A 100%)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
                 color: '#FFFFFF',
                 padding: '1rem 1.35rem',
                 borderRadius: '16px',
@@ -676,7 +684,7 @@ export default function AboutUs() {
         {/* SECTION 3: A NOTE FROM THE CEO (IMAGE LEFT, CONTENT RIGHT)                 */}
         {/* ========================================================================= */}
         <div style={{
-          borderTop: '2px dashed #CBD5E1',
+          borderTop: '2px dashed rgba(255, 255, 255, 0.25)',
           paddingTop: '5rem'
         }}>
 
@@ -690,20 +698,21 @@ export default function AboutUs() {
             {/* LEFT SIDE: STICKY PICTURE FOR CEO */}
             <div style={{ position: 'sticky', top: '100px' }}>
               <div style={{
-                borderRadius: '24px',
-                overflow: 'hidden',
-                boxShadow: '0 20px 45px rgba(37, 99, 235, 0.15)',
-                border: '4px solid #FFFFFF',
-                background: '#FFFFFF',
-                position: 'relative'
+                background: 'radial-gradient(ellipse at center, rgba(59, 130, 246, 0.22) 0%, rgba(26, 36, 99, 0) 72%)',
+                position: 'relative',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                padding: '0.5rem 0'
               }}>
                 <img
-                  src="/assets/images/ceo_full.jpg"
+                  src="/assets/images/ceo_message.png"
                   alt="Ashique Maheen - CEO"
                   style={{
                     width: '100%',
                     height: 'auto',
-                    display: 'block'
+                    display: 'block',
+                    filter: 'drop-shadow(0 20px 35px rgba(0, 0, 0, 0.45))'
                   }}
                 />
               </div>
@@ -711,7 +720,8 @@ export default function AboutUs() {
               {/* Badge directly under CEO image */}
               <div style={{
                 marginTop: '1.25rem',
-                background: 'linear-gradient(135deg, #0A2540 0%, #1D4ED8 100%)',
+                background: 'linear-gradient(135deg, #0A2540 0%, #0F172A 100%)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
                 color: '#FFFFFF',
                 padding: '1rem 1.35rem',
                 borderRadius: '16px',
@@ -736,23 +746,23 @@ export default function AboutUs() {
 
               {/* HEADER */}
               <div>
-                <div style={{ color: '#2563EB', fontSize: '0.8125rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.14em', marginBottom: '0.4rem' }}>
+                <div style={{ color: '#93C5FD', fontSize: '0.8125rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.14em', marginBottom: '0.4rem' }}>
                   LEADERSHIP NOTE —
                 </div>
                 <h2 style={{
                   fontFamily: "'Playfair Display', Georgia, serif",
                   fontSize: 'clamp(2rem, 3.5vw, 2.75rem)',
                   fontWeight: 900,
-                  color: '#1D4ED8',
+                  color: '#FFFFFF',
                   margin: '0 0 1.25rem 0',
                   lineHeight: 1.15
                 }}>
                   A Note from the CEO
                 </h2>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#334155', fontSize: '1.025rem', lineHeight: 1.75 }}>
-                  <p style={{ margin: 0, fontSize: '1.075rem', fontWeight: 600, color: '#1E293B' }}>
-                    At <strong style={{ color: '#1D4ED8' }}>Trivandrum Glass and Plywoods</strong>, I have the privilege of being part of a family journey that began more than six decades ago. Since <strong style={{ color: '#1D4ED8' }}>1963</strong>, our story has been shaped by hard work, craftsmanship, trust, and an unwavering commitment to serving our customers with integrity.
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#E0E7FF', fontSize: '1.025rem', lineHeight: 1.75 }}>
+                  <p style={{ margin: 0, fontSize: '1.075rem', fontWeight: 600, color: '#FFFFFF' }}>
+                    At <strong style={{ color: '#FFFFFF' }}>Trivandrum Glass and Plywoods</strong>, I have the privilege of being part of a family journey that began more than six decades ago. Since <strong style={{ color: '#FFFFFF' }}>1963</strong>, our story has been shaped by hard work, craftsmanship, trust, and an unwavering commitment to serving our customers with integrity.
                   </p>
 
                   <p style={{ margin: 0 }}>
@@ -763,24 +773,24 @@ export default function AboutUs() {
 
 
               {/* A LEGACY THAT INSPIRES US */}
-              <div style={{ borderTop: '1px solid #E2E8F0', paddingTop: '2rem' }}>
+              <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.2)', paddingTop: '2rem' }}>
                 <h3 style={{
                   fontFamily: "'Playfair Display', Georgia, serif",
                   fontSize: 'clamp(1.5rem, 2.5vw, 2rem)',
                   fontWeight: 800,
-                  color: '#1D4ED8',
+                  color: '#FFFFFF',
                   margin: '0 0 1rem 0'
                 }}>
                   A Legacy That Inspires Us
                 </h3>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#334155', fontSize: '1.025rem', lineHeight: 1.75 }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#E0E7FF', fontSize: '1.025rem', lineHeight: 1.75 }}>
                   <p style={{ margin: 0 }}>
-                    My grandfather, <strong style={{ color: '#1D4ED8' }}>A. M. Hassan</strong>, laid the foundation of our journey in 1963 through <strong style={{ color: '#1D4ED8' }}>S.N.B Mirror Mart</strong>. His dedication to craftsmanship, quality, and honest business practices established the values that continue to influence us today.
+                    My grandfather, <strong style={{ color: '#FFFFFF' }}>A. M. Hassan</strong>, laid the foundation of our journey in 1963 through <strong style={{ color: '#FFFFFF' }}>S.N.B Mirror Mart</strong>. His dedication to craftsmanship, quality, and honest business practices established the values that continue to influence us today.
                   </p>
 
                   <p style={{ margin: 0 }}>
-                    My father, <strong style={{ color: '#1D4ED8' }}>S. Maheen</strong>, carried that foundation forward from <strong style={{ color: '#1D4ED8' }}>2000 onwards</strong> and took the next major step by establishing <strong style={{ color: '#1D4ED8' }}>Trivandrum Glass and Plywoods in 2020</strong>.
+                    My father, <strong style={{ color: '#FFFFFF' }}>S. Maheen</strong>, carried that foundation forward from <strong style={{ color: '#FFFFFF' }}>2000 onwards</strong> and took the next major step by establishing <strong style={{ color: '#FFFFFF' }}>Trivandrum Glass and Plywoods in 2020</strong>.
                   </p>
 
                   <p style={{ margin: 0 }}>
@@ -795,24 +805,24 @@ export default function AboutUs() {
 
 
               {/* COMBINING EXPERIENCE WITH A NEW PERSPECTIVE */}
-              <div style={{ borderTop: '1px solid #E2E8F0', paddingTop: '2rem' }}>
+              <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.2)', paddingTop: '2rem' }}>
                 <h3 style={{
                   fontFamily: "'Playfair Display', Georgia, serif",
                   fontSize: 'clamp(1.5rem, 2.5vw, 2rem)',
                   fontWeight: 800,
-                  color: '#1D4ED8',
+                  color: '#FFFFFF',
                   margin: '0 0 1rem 0'
                 }}>
                   Combining Experience with a New Perspective
                 </h3>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#334155', fontSize: '1.025rem', lineHeight: 1.75 }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#E0E7FF', fontSize: '1.025rem', lineHeight: 1.75 }}>
                   <p style={{ margin: 0 }}>
                     Every generation experiences a different business environment. Customer expectations change, technology develops, designs evolve, and new opportunities emerge.
                   </p>
 
                   <p style={{ margin: 0 }}>
-                    As we look ahead, our goal is to combine the <strong style={{ color: '#1D4ED8' }}>experience and values of the past with the ideas and possibilities of the future</strong>.
+                    As we look ahead, our goal is to combine the <strong style={{ color: '#FFFFFF' }}>experience and values of the past with the ideas and possibilities of the future</strong>.
                   </p>
 
                   <p style={{ margin: 0 }}>
@@ -827,18 +837,18 @@ export default function AboutUs() {
 
 
               {/* UNDERSTANDING THE NEEDS OF OUR CUSTOMERS */}
-              <div style={{ borderTop: '1px solid #E2E8F0', paddingTop: '2rem' }}>
+              <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.2)', paddingTop: '2rem' }}>
                 <h3 style={{
                   fontFamily: "'Playfair Display', Georgia, serif",
                   fontSize: 'clamp(1.5rem, 2.5vw, 2rem)',
                   fontWeight: 800,
-                  color: '#1D4ED8',
+                  color: '#FFFFFF',
                   margin: '0 0 1rem 0'
                 }}>
                   Understanding the Needs of Our Customers
                 </h3>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#334155', fontSize: '1.025rem', lineHeight: 1.75 }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#E0E7FF', fontSize: '1.025rem', lineHeight: 1.75 }}>
                   <p style={{ margin: 0 }}>
                     Our customers are at the centre of everything we do.
                   </p>
@@ -848,7 +858,7 @@ export default function AboutUs() {
                   </p>
 
                   <p style={{ margin: 0 }}>
-                    Our aim is to understand those requirements carefully and provide solutions that combine <strong style={{ color: '#1D4ED8' }}>quality, functionality, design, and value</strong>.
+                    Our aim is to understand those requirements carefully and provide solutions that combine <strong style={{ color: '#FFFFFF' }}>quality, functionality, design, and value</strong>.
                   </p>
 
                   <p style={{ margin: 0 }}>
@@ -863,23 +873,23 @@ export default function AboutUs() {
 
 
               {/* BUILDING RELATIONSHIPS, NOT JUST TRANSACTIONS */}
-              <div style={{ borderTop: '1px solid #E2E8F0', paddingTop: '2rem' }}>
+              <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.2)', paddingTop: '2rem' }}>
                 <h3 style={{
                   fontFamily: "'Playfair Display', Georgia, serif",
                   fontSize: 'clamp(1.5rem, 2.5vw, 2rem)',
                   fontWeight: 800,
-                  color: '#1D4ED8',
+                  color: '#FFFFFF',
                   margin: '0 0 1rem 0'
                 }}>
                   Building Relationships, Not Just Transactions
                 </h3>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#334155', fontSize: '1.025rem', lineHeight: 1.75 }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#E0E7FF', fontSize: '1.025rem', lineHeight: 1.75 }}>
                   <p style={{ margin: 0 }}>
                     One of the greatest strengths of our journey has been the relationships we have built over the years.
                   </p>
 
-                  <p style={{ margin: 0, fontWeight: 700, color: '#1E3A8A' }}>
+                  <p style={{ margin: 0, fontWeight: 700, color: '#FFFFFF' }}>
                     A product may complete a transaction, but trust builds a relationship.
                   </p>
 
@@ -899,18 +909,18 @@ export default function AboutUs() {
 
 
               {/* LOOKING TOWARDS THE FUTURE */}
-              <div style={{ borderTop: '1px solid #E2E8F0', paddingTop: '2rem' }}>
+              <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.2)', paddingTop: '2rem' }}>
                 <h3 style={{
                   fontFamily: "'Playfair Display', Georgia, serif",
                   fontSize: 'clamp(1.5rem, 2.5vw, 2rem)',
                   fontWeight: 800,
-                  color: '#1D4ED8',
+                  color: '#FFFFFF',
                   margin: '0 0 1rem 0'
                 }}>
                   Looking Towards the Future
                 </h3>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#334155', fontSize: '1.025rem', lineHeight: 1.75 }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#E0E7FF', fontSize: '1.025rem', lineHeight: 1.75 }}>
                   <p style={{ margin: 0 }}>
                     As we move forward, we see significant opportunities to grow and evolve.
                   </p>
@@ -920,7 +930,7 @@ export default function AboutUs() {
                   </p>
 
                   <p style={{ margin: 0 }}>
-                    Our vision is to build a company that is <strong style={{ color: '#1D4ED8' }}>modern in its approach, strong in its values, and dependable in its service</strong>.
+                    Our vision is to build a company that is <strong style={{ color: '#FFFFFF' }}>modern in its approach, strong in its values, and dependable in its service</strong>.
                   </p>
 
                   <p style={{ margin: 0 }}>
@@ -931,22 +941,22 @@ export default function AboutUs() {
 
 
               {/* CARRYING THE PROMISE FORWARD */}
-              <div style={{ borderTop: '1px solid #E2E8F0', paddingTop: '2rem' }}>
+              <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.2)', paddingTop: '2rem' }}>
                 <h3 style={{
                   fontFamily: "'Playfair Display', Georgia, serif",
                   fontSize: 'clamp(1.5rem, 2.5vw, 2rem)',
                   fontWeight: 800,
-                  color: '#1D4ED8',
+                  color: '#FFFFFF',
                   margin: '0 0 1.25rem 0'
                 }}>
                   Carrying the Promise Forward
                 </h3>
 
-                <p style={{ color: '#334155', fontSize: '1.025rem', lineHeight: 1.75, margin: '0 0 1.25rem 0' }}>
-                  Being part of the third generation comes with both pride and responsibility. Our role is not simply to preserve the legacy, but to <strong style={{ color: '#1D4ED8' }}>strengthen it, expand it, and prepare it for the future</strong>.
+                <p style={{ color: '#E0E7FF', fontSize: '1.025rem', lineHeight: 1.75, margin: '0 0 1.25rem 0' }}>
+                  Being part of the third generation comes with both pride and responsibility. Our role is not simply to preserve the legacy, but to <strong style={{ color: '#FFFFFF' }}>strengthen it, expand it, and prepare it for the future</strong>.
                 </p>
 
-                <p style={{ color: '#1E293B', fontSize: '1rem', fontWeight: 700, margin: '0 0 1rem 0' }}>
+                <p style={{ color: '#FFFFFF', fontSize: '1rem', fontWeight: 700, margin: '0 0 1rem 0' }}>
                   The values established in 1963 remain our foundation:
                 </p>
 
@@ -959,35 +969,35 @@ export default function AboutUs() {
                     'Trust in every relationship.'
                   ].map((item, idx) => (
                     <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
-                      <CheckCircle2 size={20} color="#1D4ED8" style={{ flexShrink: 0, marginTop: '2px' }} />
-                      <span style={{ color: '#1E293B', fontSize: '1rem', fontWeight: 600, lineHeight: 1.6 }}>
+                      <CheckCircle2 size={20} color="#93C5FD" style={{ flexShrink: 0, marginTop: '2px' }} />
+                      <span style={{ color: '#FFFFFF', fontSize: '1rem', fontWeight: 600, lineHeight: 1.6 }}>
                         {item}
                       </span>
                     </div>
                   ))}
                 </div>
 
-                <p style={{ color: '#334155', fontSize: '1.025rem', lineHeight: 1.75, margin: 0 }}>
-                  As we continue this journey, our promise remains unchanged: to uphold the values of our founders while building a stronger, more modern, and more forward-looking <strong style={{ color: '#1D4ED8' }}>Trivandrum Glass and Plywoods</strong>.
+                <p style={{ color: '#E0E7FF', fontSize: '1.025rem', lineHeight: 1.75, margin: 0 }}>
+                  As we continue this journey, our promise remains unchanged: to uphold the values of our founders while building a stronger, more modern, and more forward-looking <strong style={{ color: '#FFFFFF' }}>Trivandrum Glass and Plywoods</strong>.
                 </p>
               </div>
 
 
               {/* THE JOURNEY CONTINUES */}
-              <div style={{ borderTop: '1px solid #E2E8F0', paddingTop: '2rem' }}>
+              <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.2)', paddingTop: '2rem' }}>
                 <h3 style={{
                   fontFamily: "'Playfair Display', Georgia, serif",
                   fontSize: 'clamp(1.5rem, 2.5vw, 2rem)',
                   fontWeight: 800,
-                  color: '#1D4ED8',
+                  color: '#FFFFFF',
                   margin: '0 0 1rem 0'
                 }}>
                   The Journey Continues
                 </h3>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#334155', fontSize: '1.025rem', lineHeight: 1.75 }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#E0E7FF', fontSize: '1.025rem', lineHeight: 1.75 }}>
                   <p style={{ margin: 0 }}>
-                    From my grandfather's beginnings with <strong style={{ color: '#1D4ED8' }}>S.N.B Mirror Mart in 1963</strong>, to my father's leadership and the establishment of <strong style={{ color: '#1D4ED8' }}>Trivandrum Glass and Plywoods in 2020</strong>, our journey has always been about moving forward without forgetting our roots.
+                    From my grandfather's beginnings with <strong style={{ color: '#FFFFFF' }}>S.N.B Mirror Mart in 1963</strong>, to my father's leadership and the establishment of <strong style={{ color: '#FFFFFF' }}>Trivandrum Glass and Plywoods in 2020</strong>, our journey has always been about moving forward without forgetting our roots.
                   </p>
 
                   <p style={{ margin: 0 }}>
@@ -1003,7 +1013,9 @@ export default function AboutUs() {
 
               {/* CLOSING HIGHLIGHT BLUE BANNER FOR CEO */}
               <div style={{
-                background: 'linear-gradient(135deg, #1E3A8A 0%, #1D4ED8 100%)',
+                background: 'linear-gradient(135deg, rgba(10, 37, 64, 0.88) 0%, rgba(15, 23, 42, 0.92) 100%)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+              backdropFilter: 'blur(12px)',
                 color: '#FFFFFF',
                 borderRadius: '20px',
                 padding: '2rem 2.25rem',

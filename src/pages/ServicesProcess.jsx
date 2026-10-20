@@ -451,31 +451,9 @@ export default function ServicesProcess() {
                       {svc.title}
                     </h3>
 
-                    <p style={{ color: '#475569', fontSize: '0.9375rem', lineHeight: 1.6, marginBottom: '1.5rem', flexGrow: 1 }}>
+                    <p style={{ color: '#475569', fontSize: '0.9375rem', lineHeight: 1.6, marginBottom: 0, flexGrow: 1 }}>
                       {svc.desc}
                     </p>
-
-                    <Link
-                      to="/contact"
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justify: 'center',
-                        gap: '0.5rem',
-                        padding: '0.75rem 1.25rem',
-                        borderRadius: '12px',
-                        background: 'linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%)',
-                        color: '#FFFFFF',
-                        fontWeight: 800,
-                        fontSize: '0.875rem',
-                        textDecoration: 'none',
-                        boxShadow: '0 8px 20px rgba(37, 99, 235, 0.35)',
-                        transition: 'all 0.2s ease'
-                      }}
-                    >
-                      <span>INQUIRE FOR {svc.title.toUpperCase()}</span>
-                      <ArrowRight size={16} />
-                    </Link>
                   </div>
 
                 </div>
