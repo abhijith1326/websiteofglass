@@ -152,15 +152,15 @@ export default function ServicesProcess() {
     },
     {
       step: '04',
-      title: 'Step 4 – Fabrication',
+      title: 'Step 4 – Fabrication & Secure Dispatch',
       icon: <Wrench size={26} color="#1D4ED8" />,
-      desc: 'The glass is processed, CNC cut, heat-tempered, and prepared according to the approved project requirements.'
+      desc: 'The glass is processed, CNC cut, heat-tempered, and prepared with shock-absorbing A-frame packaging for local projects and pan-South India freight distribution.'
     },
     {
       step: '05',
-      title: 'Step 5 – Professional Installation',
+      title: 'Step 5 – Installation & South India Delivery',
       icon: <ShieldCheck size={26} color="#1D4ED8" />,
-      desc: 'Our certified installation team installs the glass solution with meticulous attention to safety, alignment and finishing.'
+      desc: 'Our certified teams execute local turnkey installations in Trivandrum, while our freight logistics dispatch scheduled orders all over South India (Kerala, TN, KA, AP & Telangana).'
     },
     {
       step: '06',

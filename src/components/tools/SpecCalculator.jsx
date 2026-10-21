@@ -175,15 +175,47 @@ export default function SpecCalculator() {
           }}
         >
           <ShieldCheck size={16} color="#1D4ED8" />
-          <span>OUR AUTHORIZED DISTRIBUTORS & PRESTIGIOUS CLIENTELE</span>
+          <span>PAN-SOUTH INDIA DISTRIBUTION NETWORK</span>
         </div>
 
         <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', fontWeight: 900, textTransform: 'uppercase', color: '#0F172A', letterSpacing: '-0.02em', margin: '0.25rem 0 0.75rem 0' }}>
-          Our Trusted <span style={{ color: '#1D4ED8' }}>Distribution Partners</span>
+          Distributing All Over <span style={{ color: '#1D4ED8' }}>South India</span>
         </h2>
-        <p style={{ color: '#475569', fontSize: '1rem', maxWidth: '680px', margin: '0 auto', lineHeight: 1.6 }}>
-          Partnering with premier healthcare institutions, commercial developers, architectural studios, and engineering powerhouses across the region.
+        <p style={{ color: '#475569', fontSize: '1rem', maxWidth: '760px', margin: '0 auto 1.5rem auto', lineHeight: 1.6 }}>
+          We distribute high-performance architectural glass and structural plywood all over South India — partnering with 35+ authorized regional distributors, commercial developers, and engineering powerhouses.
         </p>
+
+        {/* 5 South Indian States Coverage Pills */}
+        <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0.5rem', maxWidth: '820px', margin: '0 auto' }}>
+          {[
+            { state: 'Kerala', detail: 'HQ & Direct Works' },
+            { state: 'Tamil Nadu', detail: 'Regional Supply' },
+            { state: 'Karnataka', detail: 'Commercial Hub' },
+            { state: 'Andhra Pradesh', detail: 'Coastal & Interior' },
+            { state: 'Telangana', detail: 'Metro Distribution' },
+          ].map((item, idx) => (
+            <span
+              key={idx}
+              style={{
+                background: '#F1F5F9',
+                border: '1px solid #E2E8F0',
+                color: '#1E293B',
+                fontSize: '0.75rem',
+                fontWeight: 700,
+                padding: '0.35rem 0.85rem',
+                borderRadius: '9999px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.4rem',
+                letterSpacing: '0.02em'
+              }}
+            >
+              <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#2563EB' }} />
+              <strong>{item.state}</strong>
+              <span style={{ color: '#64748B', fontSize: '0.6875rem' }}>({item.detail})</span>
+            </span>
+          ))}
+        </div>
       </div>
 
       {/* CONTINUOUS MARQUEE CAROUSEL CONTAINER */}
@@ -353,12 +385,17 @@ export default function SpecCalculator() {
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: '#475569', fontSize: '0.875rem', fontWeight: 600 }}>
           <CheckCircle2 size={18} color="#059669" />
-          <span><strong style={{ color: '#0F172A', fontWeight: 800 }}>35+ Authorized</strong> Regional Distributors</span>
+          <span><strong style={{ color: '#0F172A', fontWeight: 800 }}>35+ Authorized</strong> Distributors Across South India</span>
+        </div>
+        <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#CBD5E1' }} />
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: '#475569', fontSize: '0.875rem', fontWeight: 600 }}>
+          <CheckCircle2 size={18} color="#2563EB" />
+          <span><strong style={{ color: '#0F172A', fontWeight: 800 }}>Pan-South India</strong> Scheduled Freight & Logistics</span>
         </div>
         <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#CBD5E1' }} />
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: '#475569', fontSize: '0.875rem', fontWeight: 600 }}>
           <CheckCircle2 size={18} color="#1D4ED8" />
-          <span><strong style={{ color: '#0F172A', fontWeight: 800 }}>100% Certified</strong> Glass & Plywood Supply</span>
+          <span><strong style={{ color: '#0F172A', fontWeight: 800 }}>100% Certified</strong> Architectural Glass & Plywood Supply</span>
         </div>
       </div>
     </section>

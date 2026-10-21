@@ -224,7 +224,7 @@ export default function Products() {
           </h1>
 
           <p style={{ color: '#DBEAFE', fontSize: 'clamp(1.05rem, 2vw, 1.25rem)', maxWidth: '780px', margin: '0 auto 2.5rem auto', lineHeight: 1.6, fontWeight: 500 }}>
-            Explore our complete 9-category architectural glass range — from high-performance solar control and fire-rated glass to entrance systems and hardware.
+            Explore our complete 9-category architectural glass range — distributed all over South India (Kerala, Tamil Nadu, Karnataka, Andhra Pradesh, Telangana) with certified safety specifications and wholesale supply.
           </p>
 
           {/* Quick Filter Pills Bar */}
@@ -277,6 +277,42 @@ export default function Products() {
         </div>
       </div>
 
+
+      {/* SOUTH INDIA DISTRIBUTION & WHOLESALE BANNER */}
+      <div style={{ maxWidth: '1280px', margin: '2.5rem auto 0 auto', padding: '0 1.5rem' }}>
+        <div style={{
+          background: 'linear-gradient(135deg, #EFF6FF 0%, #FFFFFF 100%)',
+          border: '1px solid #BFDBFE',
+          borderRadius: '20px',
+          padding: '1.5rem 2rem',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: '1.25rem',
+          boxShadow: '0 10px 30px rgba(37, 99, 235, 0.06)'
+        }}>
+          <div>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: '#1D4ED8', fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.35rem' }}>
+              <ShieldCheck size={16} /> PAN-SOUTH INDIA DISTRIBUTION & WHOLESALE SUPPLY
+            </div>
+            <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0F172A', margin: '0 0 0.35rem 0' }}>
+              We Distribute All Over South India
+            </h3>
+            <p style={{ color: '#475569', fontSize: '0.875rem', margin: 0, maxWidth: '680px', lineHeight: 1.5 }}>
+              Direct factory supplies, project-scale quantities, and dealer distribution across <strong>Kerala, Tamil Nadu, Karnataka, Andhra Pradesh, and Telangana</strong> with secure A-frame freight delivery.
+            </p>
+          </div>
+
+          <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+            {['Kerala', 'Tamil Nadu', 'Karnataka', 'Andhra Pradesh', 'Telangana'].map((st, i) => (
+              <span key={i} style={{ background: '#DBEAFE', color: '#1E40AF', padding: '0.35rem 0.85rem', borderRadius: '9999px', fontSize: '0.78125rem', fontWeight: 800 }}>
+                ✓ {st}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* MAIN PRODUCTS CONTAINER */}
       <div style={{ maxWidth: '1280px', margin: '3.5rem auto 0 auto', padding: '0 1.5rem' }}>

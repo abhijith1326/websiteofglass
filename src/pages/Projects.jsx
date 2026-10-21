@@ -199,10 +199,46 @@ export default function Projects() {
                 </div>
 
                 {/* Card Content */}
-                <div style={{ padding: '1.35rem 1.5rem', display: 'flex', flexDirection: 'column', background: '#FFFFFF' }}>
-                  <h2 style={{ fontSize: '1.4rem', fontWeight: 900, color: '#1D4ED8', margin: 0, lineHeight: 1.25, textTransform: 'uppercase' }}>
-                    {p.name}
-                  </h2>
+                <div style={{ padding: '1.35rem 1.5rem', display: 'flex', flexDirection: 'column', background: '#FFFFFF', gap: '0.35rem' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                    <h2 style={{ fontSize: '1.4rem', fontWeight: 900, color: '#1D4ED8', margin: 0, lineHeight: 1.25, textTransform: 'uppercase' }}>
+                      {p.name}
+                    </h2>
+                    {p.id === 'sandy-resort' && (
+                      <Link 
+                        to="/gallery?project=sandy-resort" 
+                        style={{ 
+                          fontSize: '0.75rem', 
+                          fontWeight: 800, 
+                          color: '#2563EB', 
+                          background: '#EFF6FF', 
+                          border: '1px solid #BFDBFE',
+                          padding: '0.25rem 0.65rem', 
+                          borderRadius: '9999px',
+                          textDecoration: 'none' 
+                        }}
+                      >
+                        VIEW GALLERY (38) →
+                      </Link>
+                    )}
+                    {p.id === 'cdfc-hospital' && (
+                      <Link 
+                        to="/gallery?project=cdfc-hospital" 
+                        style={{ 
+                          fontSize: '0.75rem', 
+                          fontWeight: 800, 
+                          color: '#2563EB', 
+                          background: '#EFF6FF', 
+                          border: '1px solid #BFDBFE',
+                          padding: '0.25rem 0.65rem', 
+                          borderRadius: '9999px',
+                          textDecoration: 'none' 
+                        }}
+                      >
+                        VIEW GALLERY (8) →
+                      </Link>
+                    )}
+                  </div>
                 </div>
 
               </div>

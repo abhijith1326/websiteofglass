@@ -8,6 +8,7 @@ import GlassSolutions from './pages/GlassSolutions';
 import PlywoodSolutions from './pages/PlywoodSolutions';
 import ServicesProcess from './pages/ServicesProcess';
 import Projects from './pages/Projects';
+import Gallery from './pages/Gallery';
 import Quality from './pages/Quality';
 import Sustainability from './pages/Sustainability';
 import Industries from './pages/Industries';
@@ -26,6 +27,7 @@ export default function App() {
         <Route path="/plywood-solutions" element={<PlywoodSolutions />} />
         <Route path="/process" element={<ServicesProcess />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/gallery" element={<Gallery />} />
         <Route path="/quality" element={<Quality />} />
         <Route path="/sustainability" element={<Sustainability />} />
         <Route path="/industries" element={<Industries />} />

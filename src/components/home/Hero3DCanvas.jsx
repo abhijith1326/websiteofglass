@@ -327,6 +327,9 @@ export default function Hero3DCanvas() {
         @media (max-width: 768px) {
           .hero-3d-section-wrap {
             background: #181A1F !important;
+            height: 100vh !important;
+            height: 100dvh !important;
+            min-height: 100dvh !important;
           }
         }
         @media (max-width: 900px) {
@@ -338,6 +341,7 @@ export default function Hero3DCanvas() {
             padding-bottom: 2rem !important;
             gap: 0.5rem !important;
             height: 100vh !important;
+            height: 100dvh !important;
           }
           .hero-3d-writings-block {
             max-width: 100% !important;
@@ -351,10 +355,9 @@ export default function Hero3DCanvas() {
             box-shadow: none !important;
           }
           .hero-3d-rotating-badge {
-            right: 1.25rem !important;
-            bottom: 2rem !important;
-            transform: scale(0.82) !important;
-            transform-origin: bottom right !important;
+            right: 1.5rem !important;
+            bottom: clamp(3.75rem, 8vh, 5.5rem) !important;
+            transform: none !important;
           }
         }
         @media (max-width: 600px) {
@@ -411,10 +414,16 @@ export default function Hero3DCanvas() {
             justify-content: center !important;
           }
           .hero-3d-rotating-badge {
-            right: 0.75rem !important;
-            bottom: 1.5rem !important;
-            transform: scale(0.68) !important;
-            transform-origin: bottom right !important;
+            right: 1.25rem !important;
+            bottom: calc(clamp(3.75rem, 8vh, 5.5rem) + env(safe-area-inset-bottom, 0px)) !important;
+            transform: none !important;
+          }
+        }
+        @media (max-width: 420px) {
+          .hero-3d-rotating-badge {
+            right: 0.85rem !important;
+            bottom: calc(clamp(3.5rem, 7.5vh, 5rem) + env(safe-area-inset-bottom, 0px)) !important;
+            transform: none !important;
           }
         }
         @keyframes heroStageFadeIn {
@@ -553,11 +562,11 @@ export default function Hero3DCanvas() {
         style={{
           position: 'absolute',
           right: 'clamp(1.5rem, 4vw, 4rem)',
-          bottom: 'clamp(5rem, 11vh, 7.5rem)',
+          bottom: 'clamp(4rem, 8.5vh, 6rem)',
           zIndex: 25,
         }}
       >
-        <RotatingBadge size={155} number="65" subtext="YEARS" variant="light" text="TRAVANCORE GLASS ★ 65 YEARS OF EXCELLENCE ★ " />
+        <RotatingBadge size={185} number="65" subtext="YEARS" variant="light" text="TRAVANCORE GLASS ★ 65 YEARS OF EXCELLENCE ★ " />
       </div>
     </section>
   );

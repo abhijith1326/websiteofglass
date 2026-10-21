@@ -9,6 +9,7 @@ import AcousticSimulatorCanvas from '../components/tools/AcousticSimulatorCanvas
 import SpecCalculator from '../components/tools/SpecCalculator';
 import WhyChooseUs from '../components/home/WhyChooseUs';
 import EngineeredMaterialSection from '../components/home/EngineeredMaterialSection';
+import SandyResortGallery from '../components/home/SandyResortGallery';
 import { useSampleCart } from '../context/SampleCartContext';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
@@ -103,6 +104,11 @@ export default function Home() {
       {/* WHY CHOOSE TRIVANDRUM GLASS SECTION */}
       <WhyChooseUs background="#04070D" />
 
+      {/* Sandy Resort Flagship Project Gallery (All Photos & Videos) */}
+      <div className="reveal-glass-3d">
+        <SandyResortGallery />
+      </div>
+
       {/* Interactive 3D Canvas Optics & Light Visualizer */}
       <div className="reveal-depth">
         <GlassVisualizerCanvas />
@@ -131,7 +137,8 @@ export default function Home() {
           >
             {[
               { num: '1,500+', label: 'Landmark Projects', detail: 'Commercial Facades & Interiors', color: '#60A5FA' },
-              { num: '99.8%', label: 'Quality Pass Rate', detail: 'Automated Laser Scanning', color: '#34D399' },
+              { num: '5 States', label: 'South India Reach', detail: 'Kerala • TN • KA • AP • Telangana', color: '#38BDF8' },
+              { num: '35+', label: 'Regional Distributors', detail: 'Authorized Network Across South India', color: '#34D399' },
               { num: '25+ Yrs', label: 'Manufacturing Legacy', detail: 'State-of-the-art Tempering Furnaces', color: '#FBBF24' },
               { num: 'ISO 9001', label: 'Certified Standards', detail: 'BS 1088 & IS 710 Compliant', color: '#A78BFA' },
             ].map((stat, idx) => (

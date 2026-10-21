@@ -125,8 +125,11 @@ export default function GlassSolutions() {
             OUR GLASS & <span style={{ color: '#60A5FA' }}>ARCHITECTURAL SOLUTIONS</span>
           </h1>
           <p style={{ color: '#94A3B8', fontSize: 'clamp(1rem, 2vw, 1.2rem)', lineHeight: 1.7, maxWidth: '820px', margin: '0 auto' }}>
-            Explore our comprehensive, individual SEO-friendly glass categories for residential, commercial and architectural applications in Trivandrum.
+            Explore our comprehensive architectural glass solutions for residential, commercial and infrastructure projects — manufactured and distributed all over South India (Kerala, Tamil Nadu, Karnataka, Andhra Pradesh, and Telangana).
           </p>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(37, 99, 235, 0.15)', border: '1px solid rgba(96, 165, 250, 0.3)', padding: '0.4rem 1.25rem', borderRadius: '9999px', color: '#93C5FD', fontSize: '0.8125rem', fontWeight: 800, marginTop: '1.25rem' }}>
+            <span>📦 Distributing All Over South India: Kerala • Tamil Nadu • Karnataka • Andhra Pradesh • Telangana</span>
+          </div>
         </div>
       </section>
 

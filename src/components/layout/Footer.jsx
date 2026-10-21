@@ -23,7 +23,7 @@ export default function Footer() {
               <Logo size="medium" />
             </div>
             <p style={{ color: '#94A3B8', fontSize: '0.875rem', lineHeight: '1.7', marginBottom: '1.5rem' }}>
-              Pioneering high-performance architectural glass and structural plywood solutions across commercial landmarks, luxury residences, and institutional developments.
+              Pioneering high-performance architectural glass and structural plywood solutions across commercial landmarks, luxury residences, and institutional developments. Distributing all over South India — Kerala, Tamil Nadu, Karnataka, Andhra Pradesh & Telangana.
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#60A5FA', fontSize: '0.8125rem', fontWeight: 800 }}>
               <ShieldCheck size={18} />
@@ -53,6 +53,7 @@ export default function Footer() {
             </h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.625rem', fontSize: '0.875rem', color: '#CBD5E1' }}>
               <li><Link to="/about" style={{ color: 'inherit' }}>About Us</Link></li>
+              <li><Link to="/gallery" style={{ color: 'inherit' }}>Project Gallery</Link></li>
               <li><Link to="/process" style={{ color: 'inherit' }}>Engineering & Manufacturing Process</Link></li>
               <li><Link to="/projects" style={{ color: 'inherit' }}>Featured Project Portfolio</Link></li>
               <li><Link to="/quality" style={{ color: 'inherit' }}>Quality Testing & Certifications</Link></li>
@@ -67,16 +68,22 @@ export default function Footer() {
             </h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.875rem', color: '#CBD5E1', marginBottom: '1.5rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem' }}>
-                <MapPin size={16} color="#60A5FA" />
-                <span>HQ & Manufacturing Facilities, Trivandrum</span>
+                <MapPin size={16} color="#60A5FA" style={{ flexShrink: 0 }} />
+                <span>HQ & Works, Trivandrum • Distribution Across South India</span>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem' }}>
-                <Phone size={16} color="#60A5FA" />
-                <span>+91 94471 23456 / +91 471 2345678</span>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.625rem' }}>
+                <Phone size={16} color="#60A5FA" style={{ flexShrink: 0, marginTop: '2px' }} />
+                <span style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem' }}>
+                  <a href="tel:+916235666962" style={{ color: 'inherit', textDecoration: 'none' }}>+91 62356 66962</a>
+                  <span style={{ color: '#64748B' }}>/</span>
+                  <a href="tel:+918075064109" style={{ color: 'inherit', textDecoration: 'none' }}>+91 8075 064 109</a>
+                </span>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem' }}>
-                <Mail size={16} color="#60A5FA" />
-                <span>info@trivandrumglass.com</span>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.625rem' }}>
+                <Mail size={16} color="#60A5FA" style={{ flexShrink: 0, marginTop: '2px' }} />
+                <a href="mailto:trivandrumglassplywoods@gmail.com" style={{ color: 'inherit', textDecoration: 'none', wordBreak: 'break-all' }}>
+                  trivandrumglassplywoods@gmail.com
+                </a>
               </div>
             </div>
 

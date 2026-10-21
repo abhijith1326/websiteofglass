@@ -35,8 +35,8 @@ export default function TrustedSolutionsShowcase() {
     },
     {
       icon: <Truck size={20} color="#38BDF8" />,
-      title: 'ON TIME DELIVERY',
-      desc: 'Guaranteed scheduled dispatch'
+      title: 'SOUTH INDIA DISTRIBUTION',
+      desc: 'Direct supply across 5 southern states'
     },
     {
       icon: <Headphones size={20} color="#38BDF8" />,
@@ -251,7 +251,7 @@ export default function TrustedSolutionsShowcase() {
                     fontWeight: 400
                   }}
                 >
-                  Delivering certified safety glass, custom architectural glazing and precision installation for residential and commercial projects.
+                  Delivering certified safety glass, custom architectural glazing, and structural plywood all over South India for residential and commercial projects.
                 </p>
 
                 {/* 3 Pillar Cards Row */}

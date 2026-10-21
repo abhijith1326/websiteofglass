@@ -32,7 +32,7 @@ export default function ContactUs() {
             LET'S BUILD SOMETHING <span style={{ color: '#60A5FA' }}>BEAUTIFUL WITH GLASS</span>
           </h1>
           <p style={{ color: '#94A3B8', fontSize: 'clamp(1rem, 2vw, 1.2rem)', lineHeight: 1.7, maxWidth: '780px', margin: '0 auto' }}>
-            Have a residential, commercial or architectural glass requirement in Trivandrum? Talk to our team about your project for accurate recommendations and estimates.
+            Have a residential, commercial, architectural, or wholesale distribution requirement? We distribute all over South India (Kerala, Tamil Nadu, Karnataka, Andhra Pradesh, Telangana) and provide turnkey glass installations in Trivandrum. Talk to our team for accurate recommendations and freight estimates.
           </p>
         </div>
       </section>
@@ -60,8 +60,10 @@ export default function ContactUs() {
                   </div>
                   <div>
                     <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#64748B', textTransform: 'uppercase' }}>Phone Numbers</div>
-                    <div style={{ fontSize: '1.125rem', fontWeight: 800, color: '#F8FAFC', marginTop: '4px' }}>
-                      <a href="tel:9072131234" style={{ color: 'inherit', textDecoration: 'none' }}>90 721 31 234</a> / <a href="tel:9446069569" style={{ color: 'inherit', textDecoration: 'none' }}>94 460 69 569</a>
+                    <div style={{ fontSize: '1.125rem', fontWeight: 800, color: '#F8FAFC', marginTop: '4px', display: 'flex', flexWrap: 'wrap', gap: '0.5rem', alignItems: 'center' }}>
+                      <a href="tel:+916235666962" style={{ color: 'inherit', textDecoration: 'none' }}>+91 62356 66962</a>
+                      <span style={{ color: '#64748B' }}>/</span>
+                      <a href="tel:+918075064109" style={{ color: 'inherit', textDecoration: 'none' }}>+91 8075 064 109</a>
                     </div>
                   </div>
                 </div>
@@ -73,8 +75,8 @@ export default function ContactUs() {
                   </div>
                   <div>
                     <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#64748B', textTransform: 'uppercase' }}>Email Address</div>
-                    <div style={{ fontSize: '1.125rem', fontWeight: 800, color: '#F8FAFC', marginTop: '4px' }}>
-                      <a href="mailto:glass@trivandrumglass.com" style={{ color: 'inherit', textDecoration: 'none' }}>glass@trivandrumglass.com</a>
+                    <div style={{ fontSize: '1.05rem', fontWeight: 800, color: '#F8FAFC', marginTop: '4px', wordBreak: 'break-all' }}>
+                      <a href="mailto:trivandrumglassplywoods@gmail.com" style={{ color: 'inherit', textDecoration: 'none' }}>trivandrumglassplywoods@gmail.com</a>
                     </div>
                   </div>
                 </div>
@@ -92,25 +94,61 @@ export default function ContactUs() {
                   </div>
                 </div>
 
-                {/* Location */}
+                {/* South India Distribution Reach */}
+                <div className="glass-card-3d" style={{ padding: '1.5rem', borderRadius: '16px', background: 'rgba(15, 23, 42, 0.75)', border: '1px solid rgba(56, 189, 248, 0.3)', display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
+                  <div style={{ padding: '0.75rem', borderRadius: '12px', background: 'rgba(56, 189, 248, 0.15)', color: '#38BDF8' }}>
+                    <Globe size={24} />
+                  </div>
+                  <div>
+                    <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#38BDF8', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Distribution Footprint</div>
+                    <div style={{ fontSize: '1.125rem', fontWeight: 800, color: '#F8FAFC', marginTop: '4px' }}>
+                      All Over South India
+                    </div>
+                    <div style={{ fontSize: '0.8125rem', color: '#94A3B8', marginTop: '4px', lineHeight: 1.5 }}>
+                      Kerala • Tamil Nadu • Karnataka • Andhra Pradesh • Telangana
+                    </div>
+                  </div>
+                </div>
+
+                {/* Local Office & Service Location */}
                 <div className="glass-card-3d" style={{ padding: '1.5rem', borderRadius: '16px', background: 'rgba(15, 23, 42, 0.75)', border: '1px solid rgba(255,255,255,0.12)', display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
                   <div style={{ padding: '0.75rem', borderRadius: '12px', background: 'rgba(167, 139, 250, 0.15)', color: '#A78BFA' }}>
                     <MapPin size={24} />
                   </div>
                   <div>
-                    <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#64748B', textTransform: 'uppercase' }}>Service Location</div>
+                    <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#64748B', textTransform: 'uppercase' }}>HQ & Turnkey Installation</div>
                     <div style={{ fontSize: '1.125rem', fontWeight: 800, color: '#F8FAFC', marginTop: '4px' }}>
                       Trivandrum & Surrounding Areas, Kerala
+                    </div>
+                    <div style={{ fontSize: '0.8125rem', color: '#94A3B8', marginTop: '4px', lineHeight: 1.5 }}>
+                      Precision site measurements, custom fabrication & expert structural mounting.
                     </div>
                   </div>
                 </div>
 
               </div>
 
-              {/* Local SEO Serving Areas */}
+              {/* Pan-South India Coverage & Local SEO Serving Areas */}
               <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', padding: '1.5rem', borderRadius: '16px' }}>
-                <div style={{ fontSize: '0.8125rem', fontWeight: 800, color: '#60A5FA', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
-                  Serving Trivandrum & Nearby Localities:
+                <div style={{ fontSize: '0.8125rem', fontWeight: 800, color: '#38BDF8', textTransform: 'uppercase', marginBottom: '0.5rem', letterSpacing: '0.05em' }}>
+                  Distributing All Over South India:
+                </div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.375rem', marginBottom: '1.25rem' }}>
+                  {[
+                    'Kerala (HQ & Statewide)',
+                    'Tamil Nadu (Chennai, Coimbatore, Madurai)',
+                    'Karnataka (Bangalore, Mysuru, Mangalore)',
+                    'Andhra Pradesh (Visakhapatnam, Vijayawada)',
+                    'Telangana (Hyderabad, Warangal)'
+                  ].map((st, idx) => (
+                    <span key={idx} style={{ background: 'rgba(56, 189, 248, 0.12)', border: '1px solid rgba(56, 189, 248, 0.25)', color: '#BAE6FD', padding: '0.3rem 0.65rem', borderRadius: '6px', fontSize: '0.75rem', fontWeight: 700 }}>
+                      {st}
+                    </span>
+                  ))}
+                </div>
+
+                <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#60A5FA', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+                  Trivandrum Local Installation Coverage:
                 </div>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.375rem' }}>
                   {localAreas.map((area, idx) => (
@@ -169,7 +207,7 @@ export default function ContactUs() {
                       <input
                         type="tel"
                         required
-                        placeholder="e.g. 9072131234"
+                        placeholder="e.g. +91 62356 66962"
                         style={{ width: '100%', padding: '0.875rem 1rem', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.15)', background: 'rgba(255,255,255,0.05)', color: '#fff', fontSize: '0.9375rem', outline: 'none' }}
                       />
                     </div>
@@ -206,7 +244,7 @@ export default function ContactUs() {
                     <textarea
                       rows="4"
                       required
-                      placeholder="Describe your requirements, dimensions, or site location in Trivandrum..."
+                      placeholder="Describe your project, required glass/plywood specs, or site/delivery location (anywhere in South India: Kerala, TN, KA, AP, Telangana, or Trivandrum)..."
                       style={{ width: '100%', padding: '0.875rem 1rem', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.15)', background: 'rgba(255,255,255,0.05)', color: '#fff', fontSize: '0.9375rem', outline: 'none', resize: 'vertical' }}
                     />
                   </div>

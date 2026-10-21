@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, Calendar, Sparkles, ShieldCheck, HeartHandshake, CheckCircle2, UserCheck, TrendingUp, Lightbulb, Compass, Award as AwardIcon } from 'lucide-react';
+import { Award, Calendar, Sparkles, ShieldCheck, HeartHandshake, CheckCircle2, UserCheck, TrendingUp, Lightbulb, Compass, Award as AwardIcon, Globe } from 'lucide-react';
 
 export default function AboutUs() {
   return (
@@ -1006,6 +1006,82 @@ export default function AboutUs() {
 
                   <p style={{ margin: 0 }}>
                     With the support of our family, team, customers, and partners, we look forward to creating new milestones, embracing new opportunities, and continuing to earn the trust that has been built over generations.
+                  </p>
+                </div>
+              </div>
+
+
+              {/* EXPANDING HORIZONS: DISTRIBUTING ALL OVER SOUTH INDIA */}
+              <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.2)', paddingTop: '2rem' }}>
+                <div style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  color: '#93C5FD',
+                  fontSize: '0.78125rem',
+                  fontWeight: 800,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.12em',
+                  marginBottom: '0.5rem'
+                }}>
+                  <Globe size={15} color="#93C5FD" /> REGIONAL REACH & SUPPLY CHAIN
+                </div>
+                <h3 style={{
+                  fontFamily: "'Playfair Display', Georgia, serif",
+                  fontSize: 'clamp(1.5rem, 2.5vw, 2rem)',
+                  fontWeight: 800,
+                  color: '#FFFFFF',
+                  margin: '0 0 1.25rem 0'
+                }}>
+                  Expanding Horizons: Distributing All Over South India
+                </h3>
+
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', color: '#E0E7FF', fontSize: '1.025rem', lineHeight: 1.75 }}>
+                  <p style={{ margin: 0 }}>
+                    What began in <strong style={{ color: '#FFFFFF' }}>1963</strong> as an artisan mirror-silvering workshop at <strong style={{ color: '#FFFFFF' }}>Pappanamcode Industrial Estate</strong> has steadily grown into a major distribution powerhouse serving architects, builders, and commercial developers <strong style={{ color: '#FFFFFF' }}>all over South India</strong>.
+                  </p>
+
+                  <p style={{ margin: 0 }}>
+                    Today, through our established network of <strong style={{ color: '#FFFFFF' }}>35+ authorized regional distributors</strong> and specialized container freight logistics, we supply certified architectural safety glass, acoustic interlayers, and IS 710 / BS 1088 marine plywood across:
+                  </p>
+
+                  <div style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+                    gap: '0.85rem',
+                    margin: '0.5rem 0 1rem 0'
+                  }}>
+                    {[
+                      { state: 'Kerala', desc: 'Central Processing & HQ' },
+                      { state: 'Tamil Nadu', desc: 'Chennai, Coimbatore, Madurai' },
+                      { state: 'Karnataka', desc: 'Bangalore, Mysuru, Hubli' },
+                      { state: 'Andhra Pradesh', desc: 'Visakhapatnam, Vijayawada' },
+                      { state: 'Telangana', desc: 'Hyderabad & Regional Hubs' },
+                    ].map((item, idx) => (
+                      <div
+                        key={idx}
+                        style={{
+                          background: 'rgba(255, 255, 255, 0.08)',
+                          border: '1px solid rgba(255, 255, 255, 0.18)',
+                          padding: '1rem',
+                          borderRadius: '12px',
+                          display: 'flex',
+                          flexDirection: 'column',
+                          gap: '0.25rem'
+                        }}
+                      >
+                        <div style={{ fontSize: '1rem', fontWeight: 800, color: '#FFFFFF' }}>
+                          {item.state}
+                        </div>
+                        <div style={{ fontSize: '0.75rem', color: '#93C5FD', fontWeight: 600 }}>
+                          {item.desc}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <p style={{ margin: 0 }}>
+                    Whether supplying landmark hospitality resorts, multi-specialty hospitals, or corporate tech campuses, our South India-wide distribution network guarantees certified quality, secure shock-proof packaging, and dependable project timelines.
                   </p>
                 </div>
               </div>

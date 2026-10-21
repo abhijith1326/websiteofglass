@@ -6,7 +6,7 @@ export default function FeatureStrip() {
     { icon: <Award size={22} color="#60A5FA" />, title: 'PREMIUM QUALITY', desc: 'Superior finish & ISO standards' },
     { icon: <ShieldCheck size={22} color="#F59E0B" />, title: 'DURABLE & RELIABLE', desc: '100% BWP & toughened safety' },
     { icon: <Wrench size={22} color="#34D399" />, title: 'EXPERT FITTING', desc: 'Professional installation team' },
-    { icon: <Truck size={22} color="#A78BFA" />, title: 'ON TIME DELIVERY', desc: 'Guaranteed scheduled dispatch' },
+    { icon: <Truck size={22} color="#A78BFA" />, title: 'ALL SOUTH INDIA DELIVERY', desc: 'Direct supply across 5 southern states' },
     { icon: <Headphones size={22} color="#F43F5E" />, title: 'DEDICATED SUPPORT', desc: '24/7 technical consultation' },
   ];
 

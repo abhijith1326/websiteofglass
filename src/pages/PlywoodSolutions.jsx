@@ -68,6 +68,9 @@ export default function PlywoodSolutions() {
           <p style={{ color: '#94A3B8', marginTop: '0.75rem', fontSize: '1.125rem', lineHeight: 1.6 }}>
             BWP Marine, BWR, Fire-Retardant, Flexible, and Decorative Veneer plywood for heavy construction, high-end furniture, and interior joinery.
           </p>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(37, 99, 235, 0.15)', border: '1px solid rgba(96, 165, 250, 0.3)', padding: '0.4rem 1.25rem', borderRadius: '9999px', color: '#93C5FD', fontSize: '0.8125rem', fontWeight: 800, marginTop: '1.25rem' }}>
+            <span>📦 Distributing All Over South India: Kerala • Tamil Nadu • Karnataka • Andhra Pradesh • Telangana</span>
+          </div>
         </div>
       </section>
 

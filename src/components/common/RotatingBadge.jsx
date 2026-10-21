@@ -66,26 +66,26 @@ export default function RotatingBadge({
         /* Responsive Mobile Scaling */
         @media (max-width: 768px) {
           .interactive-rotating-badge {
-            width: clamp(90px, 22vw, 115px) !important;
-            height: clamp(90px, 22vw, 115px) !important;
+            width: clamp(110px, 28vw, 140px) !important;
+            height: clamp(110px, 28vw, 140px) !important;
           }
           .interactive-rotating-badge-number {
-            font-size: clamp(26px, 7vw, 36px) !important;
+            font-size: clamp(32px, 8vw, 42px) !important;
           }
           .interactive-rotating-badge-subtext {
-            font-size: clamp(6.5px, 1.8vw, 9px) !important;
+            font-size: clamp(8px, 2vw, 10px) !important;
           }
         }
         @media (max-width: 480px) {
           .interactive-rotating-badge {
-            width: 85px !important;
-            height: 85px !important;
+            width: 110px !important;
+            height: 110px !important;
           }
           .interactive-rotating-badge-number {
-            font-size: 25px !important;
+            font-size: 32px !important;
           }
           .interactive-rotating-badge-subtext {
-            font-size: 6.5px !important;
+            font-size: 8px !important;
           }
         }
       `}</style>

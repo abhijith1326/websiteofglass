@@ -11,8 +11,12 @@ export default function FAQSection({ showQuickAnswer = true, background = '#0407
       a: 'TRIVANDRUM GLASS provides architectural glass solutions including toughened glass, glass doors, glass partitions, glass railings, shower enclosures, glazing solutions, mirrors and customized glass applications.'
     },
     {
-      q: 'Where does TRIVANDRUM GLASS provide glass services?',
-      a: 'TRIVANDRUM GLASS provides glass and architectural solutions in Trivandrum and surrounding areas of Kerala (including Thiruvananthapuram, Kazhakkoottam, Sreekaryam, Pattom, Kowdiar, Vellayambalam, Peroorkada, Ulloor, Kesavadasapuram, Vattiyoorkavu, Nemom, Kovalam, and Neyyattinkara), subject to project requirements.'
+      q: 'Where does TRIVANDRUM GLASS distribute and provide services?',
+      a: 'TRIVANDRUM GLASS distributes architectural glass and structural plywood all over South India — including Kerala, Tamil Nadu, Karnataka, Andhra Pradesh, and Telangana. In addition to our pan-South India distribution network, we provide direct site measurement, consultation, and turnkey installation across Trivandrum and surrounding areas of Kerala.'
+    },
+    {
+      q: 'Do you distribute glass and plywood all over South India?',
+      a: 'Yes! We distribute our complete range of architectural glass, toughened safety glass, acoustic laminated units, and IS 710 / BS 1088 marine plywood all over South India. We partner with 35+ authorized regional distributors and operate scheduled freight dispatches across Kerala, Tamil Nadu, Karnataka, Andhra Pradesh, and Telangana.'
     },
     {
       q: 'What is toughened glass?',
@@ -95,7 +99,7 @@ export default function FAQSection({ showQuickAnswer = true, background = '#0407
               What is TRIVANDRUM GLASS?
             </h3>
             <p style={{ color: '#E2E8F0', fontSize: '1.0625rem', lineHeight: 1.7, margin: 0, fontWeight: 400 }}>
-              TRIVANDRUM GLASS is a glass and architectural solutions company serving Trivandrum and surrounding areas in Kerala. The company provides glass solutions for residential, commercial and architectural applications, including toughened glass, glass doors, partitions, railings, glazing and customized glass installations.
+              TRIVANDRUM GLASS is a premier architectural glass and plywood company with comprehensive distribution all over South India (Kerala, Tamil Nadu, Karnataka, Andhra Pradesh, and Telangana) alongside localized precision manufacturing, custom fabrication, and turnkey installation across Trivandrum and Kerala.
             </p>
           </div>
         )}
@@ -189,14 +193,55 @@ export default function FAQSection({ showQuickAnswer = true, background = '#0407
             textAlign: 'center',
           }}
         >
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: '#34D399', fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '0.875rem' }}>
-            <MapPin size={16} /> LOCAL SERVICE AREAS
+          {/* South India Distribution Banner */}
+          <div style={{ marginBottom: '2.5rem', paddingBottom: '2rem', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: '#60A5FA', fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '0.75rem' }}>
+              <Sparkles size={16} /> PAN-SOUTH INDIA DISTRIBUTION NETWORK
+            </div>
+            <h3 style={{ fontSize: 'clamp(1.35rem, 2.5vw, 1.85rem)', fontWeight: 900, color: '#FFFFFF', marginBottom: '0.75rem' }}>
+              Distributing All Over <span style={{ color: '#60A5FA' }}>South India</span>
+            </h3>
+            <p style={{ color: '#94A3B8', fontSize: '0.9375rem', lineHeight: 1.6, maxWidth: '750px', margin: '0 auto 1.25rem auto' }}>
+              We distribute commercial-grade architectural glass, safety glazing, and premium plywood across 5 southern states with dedicated logistics:
+            </p>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.625rem', justifyContent: 'center', maxWidth: '880px', margin: '0 auto' }}>
+              {[
+                { name: 'Kerala', desc: 'Statewide & HQ' },
+                { name: 'Tamil Nadu', desc: 'Chennai, Coimbatore, Madurai' },
+                { name: 'Karnataka', desc: 'Bangalore, Mysuru, Mangalore' },
+                { name: 'Andhra Pradesh', desc: 'Visakhapatnam, Vijayawada' },
+                { name: 'Telangana', desc: 'Hyderabad, Warangal' },
+              ].map((st, i) => (
+                <span
+                  key={i}
+                  style={{
+                    background: 'rgba(37, 99, 235, 0.15)',
+                    border: '1px solid rgba(96, 165, 250, 0.35)',
+                    color: '#FFFFFF',
+                    padding: '0.45rem 1rem',
+                    borderRadius: '9999px',
+                    fontSize: '0.8125rem',
+                    fontWeight: 800,
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.4rem'
+                  }}
+                >
+                  <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#60A5FA' }} />
+                  {st.name} <span style={{ color: '#93C5FD', fontSize: '0.6875rem', fontWeight: 600 }}>({st.desc})</span>
+                </span>
+              ))}
+            </div>
           </div>
-          <h3 style={{ fontSize: '1.5rem', fontWeight: 900, color: '#FFFFFF', marginBottom: '0.875rem' }}>
-            Serving Trivandrum & Surrounding Areas
-          </h3>
-          <p style={{ color: '#94A3B8', fontSize: '0.9375rem', lineHeight: 1.6, maxWidth: '750px', margin: '0 auto 1.5rem auto' }}>
-            TRIVANDRUM GLASS provides glass and architectural solutions for residential, commercial and architectural customers across Trivandrum and nearby localities in Thiruvananthapuram, Kerala:
+
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: '#34D399', fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '0.875rem' }}>
+            <MapPin size={16} /> LOCAL FABRICATION & INSTALLATION SERVICES
+          </div>
+          <h4 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '0.65rem' }}>
+            Serving Trivandrum & Surrounding Districts
+          </h4>
+          <p style={{ color: '#94A3B8', fontSize: '0.875rem', lineHeight: 1.6, maxWidth: '750px', margin: '0 auto 1.5rem auto' }}>
+            Direct site survey, consultation, and turnkey installation teams available across:
           </p>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.625rem', justifyContent: 'center', maxWidth: '880px', margin: '0 auto 2rem auto' }}>
@@ -218,14 +263,14 @@ export default function FAQSection({ showQuickAnswer = true, background = '#0407
             ))}
           </div>
 
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: '0.875rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a
-              href="tel:9072131234"
+              href="tel:+916235666962"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '0.5rem',
-                padding: '0.75rem 1.5rem',
+                padding: '0.75rem 1.35rem',
                 borderRadius: '9999px',
                 background: 'linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%)',
                 color: '#FFFFFF',
@@ -235,7 +280,26 @@ export default function FAQSection({ showQuickAnswer = true, background = '#0407
               }}
             >
               <Phone size={15} />
-              <span>Call 90 721 31 234</span>
+              <span>Call +91 62356 66962</span>
+            </a>
+            <a
+              href="tel:+918075064109"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                padding: '0.75rem 1.35rem',
+                borderRadius: '9999px',
+                border: '1px solid rgba(255,255,255,0.25)',
+                background: 'rgba(255,255,255,0.08)',
+                color: '#FFFFFF',
+                fontWeight: 800,
+                fontSize: '0.8125rem',
+                textDecoration: 'none',
+              }}
+            >
+              <Phone size={15} />
+              <span>Call +91 8075 064 109</span>
             </a>
             <Link
               to="/contact"
