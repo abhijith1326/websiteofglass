@@ -1,11 +1,12 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles, Play, Pause } from 'lucide-react';
 import { useAudioFX } from '../../context/AudioFXContext';
 import { useSampleCart } from '../../context/SampleCartContext';
 import RotatingBadge from '../common/RotatingBadge';
 
-const TOTAL_FRAMES = 192;
+const DESKTOP_FRAMES = 192;
+const MOBILE_FRAMES = 105;
 
 export default function Hero3DCanvas() {
   const containerRef = useRef(null);
@@ -13,25 +14,48 @@ export default function Hero3DCanvas() {
   const { playTone } = useAudioFX();
   const { addItem } = useSampleCart();
 
+  const [isMobile, setIsMobile] = useState(() => (typeof window !== 'undefined' ? window.innerWidth <= 768 : false));
   const [desktopImages, setDesktopImages] = useState([]);
   const [mobileImages, setMobileImages] = useState([]);
   const [loadedCount, setLoadedCount] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
   const [frameProgress, setFrameProgress] = useState(0);
   const [activeStage, setActiveStage] = useState(0);
+  const [isPlayingAuto, setIsPlayingAuto] = useState(false);
 
   const targetFrameRef = useRef(0);
   const currentFrameRef = useRef(0);
   const animFrameIdRef = useRef(null);
+  const autoPlayTimerRef = useRef(null);
   const touchStartYRef = useRef(0);
+  const hasTriggeredImpactSound = useRef(false);
+
+  // Synchronize screen size
+  useEffect(() => {
+    const handleResize = () => {
+      const mobile = window.innerWidth <= 768;
+      setIsMobile((prev) => {
+        if (prev !== mobile) {
+          const maxFrames = mobile ? MOBILE_FRAMES : DESKTOP_FRAMES;
+          targetFrameRef.current = Math.min(targetFrameRef.current, maxFrames - 1);
+          currentFrameRef.current = Math.min(currentFrameRef.current, maxFrames - 1);
+          return mobile;
+        }
+        return prev;
+      });
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Instant Progressive Frame Loading Engine
   useEffect(() => {
     let isMounted = true;
-    const isMobile = window.innerWidth <= 768;
-    const activeFolder = isMobile ? '/mobile-frames' : '/frames';
+    const activeIsMobile = window.innerWidth <= 768;
+    const activeFolder = activeIsMobile ? '/mobile-frames' : '/frames';
+    const totalFrames = activeIsMobile ? MOBILE_FRAMES : DESKTOP_FRAMES;
 
-    const targetArr = new Array(TOTAL_FRAMES);
+    const targetArr = new Array(totalFrames);
 
     // 1. Instantly load Frame 1 so 3D Canvas renders immediately (< 50ms) without waiting
     const firstImg = new Image();
@@ -39,14 +63,14 @@ export default function Hero3DCanvas() {
     firstImg.onload = () => {
       if (!isMounted) return;
       targetArr[0] = firstImg;
-      if (isMobile) setMobileImages([...targetArr]);
+      if (activeIsMobile) setMobileImages([...targetArr]);
       else setDesktopImages([...targetArr]);
       setIsLoaded(true);
     };
 
     // 2. Preload remaining frames for active device in background
     let loadedCounter = 0;
-    for (let i = 1; i <= TOTAL_FRAMES; i++) {
+    for (let i = 1; i <= totalFrames; i++) {
       const frameNum = String(i).padStart(4, '0');
       const img = new Image();
       img.src = `${activeFolder}/frame-${frameNum}.jpg`;
@@ -56,8 +80,8 @@ export default function Hero3DCanvas() {
         targetArr[i - 1] = img;
         loadedCounter++;
         setLoadedCount(loadedCounter);
-        if (loadedCounter === TOTAL_FRAMES) {
-          if (isMobile) setMobileImages([...targetArr]);
+        if (loadedCounter === totalFrames) {
+          if (activeIsMobile) setMobileImages([...targetArr]);
           else setDesktopImages([...targetArr]);
         }
       };
@@ -69,53 +93,101 @@ export default function Hero3DCanvas() {
       };
     }
 
-    if (isMobile) setMobileImages(targetArr);
+    if (activeIsMobile) setMobileImages(targetArr);
     else setDesktopImages(targetArr);
 
     return () => {
       isMounted = false;
     };
-  }, []);
+  }, [isMobile]);
 
-  // Update frame progress state and left writings active stage
-  const updateProgressState = (frameIdx) => {
-    const prog = frameIdx / (TOTAL_FRAMES - 1);
+  // Update frame progress state and active stage
+  const updateProgressState = (frameIdx, maxFrames) => {
+    const total = maxFrames || (window.innerWidth <= 768 ? MOBILE_FRAMES : DESKTOP_FRAMES);
+    const prog = Math.min(1, Math.max(0, frameIdx / (total - 1)));
     setFrameProgress(prog);
 
-    if (prog < 0.33) {
+    if (prog < 0.35) {
       setActiveStage(0);
-    } else if (prog < 0.66) {
+    } else if (prog < 0.7) {
       setActiveStage(1);
     } else {
       setActiveStage(2);
     }
+
+    // Trigger subtle impact tone when hammer strikes (frame ~68 on mobile)
+    const activeIsMobile = window.innerWidth <= 768;
+    if (activeIsMobile && frameIdx >= 67 && frameIdx <= 72) {
+      if (!hasTriggeredImpactSound.current) {
+        hasTriggeredImpactSound.current = true;
+        try {
+          playTone?.(160, 0.09);
+        } catch (_) { }
+      }
+    } else if (frameIdx < 60 || frameIdx > 80) {
+      hasTriggeredImpactSound.current = false;
+    }
   };
 
-  // Wheel Scroll-Lock Engine: Keeps page at top while scrubbing 192 frames. Unlocks upon completion!
+  // Toggle Auto Play animation on mobile
+  const toggleAutoPlay = () => {
+    if (isPlayingAuto) {
+      setIsPlayingAuto(false);
+      if (autoPlayTimerRef.current) clearInterval(autoPlayTimerRef.current);
+    } else {
+      setIsPlayingAuto(true);
+      const total = isMobile ? MOBILE_FRAMES : DESKTOP_FRAMES;
+      if (targetFrameRef.current >= total - 1) {
+        targetFrameRef.current = 0;
+        currentFrameRef.current = 0;
+      }
+      autoPlayTimerRef.current = setInterval(() => {
+        targetFrameRef.current = (targetFrameRef.current + 1) % total;
+        updateProgressState(targetFrameRef.current, total);
+      }, 35);
+    }
+  };
+
+  useEffect(() => {
+    return () => {
+      if (autoPlayTimerRef.current) clearInterval(autoPlayTimerRef.current);
+    };
+  }, []);
+
+  // Wheel Scroll-Lock Engine & Mobile Touch Swipe
   useEffect(() => {
     const handleWheel = (e) => {
       const scrollY = window.scrollY || window.pageYOffset;
+      const currentIsMobile = window.innerWidth <= 768;
+      const totalFrames = currentIsMobile ? MOBILE_FRAMES : DESKTOP_FRAMES;
 
-      // Check if user is at the top hero section
       if (scrollY <= 15) {
         const delta = e.deltaY;
         const currentT = targetFrameRef.current;
 
         // User scrolling DOWN and animation not finished
-        if (delta > 0 && currentT < TOTAL_FRAMES - 1) {
+        if (delta > 0 && currentT < totalFrames - 1) {
           e.preventDefault();
+          if (autoPlayTimerRef.current) {
+            clearInterval(autoPlayTimerRef.current);
+            setIsPlayingAuto(false);
+          }
           const step = Math.max(1, Math.round(Math.abs(delta) * 0.12));
-          const nextFrame = Math.min(TOTAL_FRAMES - 1, currentT + step);
+          const nextFrame = Math.min(totalFrames - 1, currentT + step);
           targetFrameRef.current = nextFrame;
-          updateProgressState(nextFrame);
+          updateProgressState(nextFrame, totalFrames);
         }
         // User scrolling UP at top of page and frame > 0
         else if (delta < 0 && currentT > 0) {
           e.preventDefault();
+          if (autoPlayTimerRef.current) {
+            clearInterval(autoPlayTimerRef.current);
+            setIsPlayingAuto(false);
+          }
           const step = Math.max(1, Math.round(Math.abs(delta) * 0.12));
           const nextFrame = Math.max(0, currentT - step);
           targetFrameRef.current = nextFrame;
-          updateProgressState(nextFrame);
+          updateProgressState(nextFrame, totalFrames);
         }
       }
     };
@@ -127,25 +199,35 @@ export default function Hero3DCanvas() {
 
     const handleTouchMove = (e) => {
       const scrollY = window.scrollY || window.pageYOffset;
+      const currentIsMobile = window.innerWidth <= 768;
+      const totalFrames = currentIsMobile ? MOBILE_FRAMES : DESKTOP_FRAMES;
 
       if (scrollY <= 15) {
         const touchY = e.touches[0].clientY;
         const diffY = touchStartYRef.current - touchY; // positive = swipe up / scroll down
         const currentT = targetFrameRef.current;
 
-        if (diffY > 0 && currentT < TOTAL_FRAMES - 1) {
+        if (diffY > 0 && currentT < totalFrames - 1) {
           e.preventDefault();
-          const step = Math.max(1, Math.round(Math.abs(diffY) * 0.15));
-          const nextFrame = Math.min(TOTAL_FRAMES - 1, currentT + step);
+          if (autoPlayTimerRef.current) {
+            clearInterval(autoPlayTimerRef.current);
+            setIsPlayingAuto(false);
+          }
+          const step = Math.max(1, Math.round(Math.abs(diffY) * 0.18));
+          const nextFrame = Math.min(totalFrames - 1, currentT + step);
           targetFrameRef.current = nextFrame;
-          updateProgressState(nextFrame);
+          updateProgressState(nextFrame, totalFrames);
           touchStartYRef.current = touchY;
         } else if (diffY < 0 && currentT > 0) {
           e.preventDefault();
-          const step = Math.max(1, Math.round(Math.abs(diffY) * 0.15));
+          if (autoPlayTimerRef.current) {
+            clearInterval(autoPlayTimerRef.current);
+            setIsPlayingAuto(false);
+          }
+          const step = Math.max(1, Math.round(Math.abs(diffY) * 0.18));
           const nextFrame = Math.max(0, currentT - step);
           targetFrameRef.current = nextFrame;
-          updateProgressState(nextFrame);
+          updateProgressState(nextFrame, totalFrames);
           touchStartYRef.current = touchY;
         }
       }
@@ -160,9 +242,9 @@ export default function Hero3DCanvas() {
       window.removeEventListener('touchstart', handleTouchStart);
       window.removeEventListener('touchmove', handleTouchMove);
     };
-  }, []);
+  }, [isMobile]);
 
-  // Render loop for full-size 3D video playback with 1st image -> 2nd image vertical transition
+  // Render loop for full-size 3D video playback
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -179,6 +261,8 @@ export default function Hero3DCanvas() {
 
       const w = rect.width;
       const h = rect.height;
+      const isMobileView = w <= 768;
+      const totalFrames = isMobileView ? MOBILE_FRAMES : DESKTOP_FRAMES;
 
       ctx.save();
       ctx.scale(dpr, dpr);
@@ -188,13 +272,13 @@ export default function Hero3DCanvas() {
       currentFrameRef.current += diff * 0.18;
 
       let frameIdx = Math.round(currentFrameRef.current);
-      frameIdx = ((frameIdx % TOTAL_FRAMES) + TOTAL_FRAMES) % TOTAL_FRAMES;
+      frameIdx = Math.max(0, Math.min(totalFrames - 1, frameIdx));
 
-      // Clear & fill background with solid swatch #181A1F on mobile / studio glow on desktop
+      // Clear & fill background
       ctx.clearRect(0, 0, w, h);
-      if (w <= 768) {
-        // Mobile View animation background using exact user swatch #181A1F
-        ctx.fillStyle = '#181A1F';
+      if (isMobileView) {
+        // Deep pure black background to seamlessly match the hammer strike frames
+        ctx.fillStyle = '#000000';
       } else {
         // Desktop View background
         const bgGrad = ctx.createRadialGradient(w * 0.5, h * 0.5, 10, w * 0.5, h * 0.5, Math.max(w, h) * 0.7);
@@ -205,9 +289,8 @@ export default function Hero3DCanvas() {
       }
       ctx.fillRect(0, 0, w, h);
 
-      const isMobileView = w <= 768;
-      const targetImages = (isMobileView && mobileImages.length > 0) ? mobileImages : desktopImages;
-      const img = targetImages[frameIdx] || desktopImages[frameIdx];
+      const targetImages = isMobileView ? mobileImages : desktopImages;
+      const img = targetImages[frameIdx] || targetImages[0] || (desktopImages[frameIdx] || desktopImages[0]);
 
       if (img && img.complete && img.naturalWidth > 0) {
         ctx.imageSmoothingEnabled = true;
@@ -218,7 +301,7 @@ export default function Hero3DCanvas() {
         let drawW, drawH, offsetX, offsetY;
 
         if (isMobileView) {
-          // Mobile View: Cover 100% of mobile viewport height & width using dedicated mobile frames
+          // Mobile View: Cover 100% of mobile viewport height & width using dedicated 9:16 hammer strike frames
           if (canvasRatio > imgRatio) {
             drawW = w;
             drawH = w / imgRatio;
@@ -236,18 +319,19 @@ export default function Hero3DCanvas() {
           drawH = w / imgRatio;
           offsetX = 0;
           offsetY = (h - drawH) / 2;
+          const startPhase = Math.min(1, Math.max(0, frameIdx / 18));
+          const initialYShift = (1 - startPhase) * (-h * 0.085);
+          offsetY += initialYShift;
         } else {
           // Desktop Standard View
           drawH = h;
           drawW = h * imgRatio;
           offsetX = (w - drawW) / 2;
           offsetY = 0;
+          const startPhase = Math.min(1, Math.max(0, frameIdx / 18));
+          const initialYShift = (1 - startPhase) * (-h * 0.085);
+          offsetY += initialYShift;
         }
-
-        // Initial vertical offset transition (1st image condition -> 2nd image condition)
-        const startPhase = Math.min(1, Math.max(0, frameIdx / 18));
-        const initialYShift = (1 - startPhase) * (-h * 0.085);
-        offsetY += initialYShift;
 
         // Draw bright 3D image
         ctx.drawImage(img, offsetX, offsetY, drawW, drawH);
@@ -266,10 +350,8 @@ export default function Hero3DCanvas() {
     };
   }, [desktopImages, mobileImages]);
 
-  const loadPercentage = Math.round((loadedCount / TOTAL_FRAMES) * 100);
-
-  // Story stages for left-aligned writings
-  const storyStages = [
+  // Story stages tailored for desktop & mobile
+  const desktopStages = [
     {
       id: 'quality-glass',
       stageNum: '01',
@@ -305,7 +387,44 @@ export default function Hero3DCanvas() {
     },
   ];
 
-  const currentStageData = storyStages[activeStage];
+  const mobileStages = [
+    {
+      id: 'toughened-safety',
+      stageNum: '01',
+      badge: 'TOUGHENED SAFETY GLASS',
+      badgeBg: 'rgba(29, 78, 216, 0.35)',
+      badgeBorder: 'rgba(96, 165, 250, 0.5)',
+      badgeColor: '#60A5FA',
+      title: 'Impact Resistant Glass',
+      description: 'Engineered up to 5x stronger than standard annealed glass with high mechanical resilience.',
+      highlightColor: '#60A5FA',
+    },
+    {
+      id: 'hammer-test',
+      stageNum: '02',
+      badge: 'HAMMER STRIKE TESTED',
+      badgeBg: 'rgba(239, 68, 68, 0.35)',
+      badgeBorder: 'rgba(248, 113, 113, 0.5)',
+      badgeColor: '#F87171',
+      title: 'Withstands Direct Impact',
+      description: 'Proven structural toughness absorbing high-velocity mechanical shocks without cracking.',
+      highlightColor: '#F87171',
+    },
+    {
+      id: 'certified-security',
+      stageNum: '03',
+      badge: 'ZERO FAILURE INTEGRITY',
+      badgeBg: 'rgba(16, 185, 129, 0.35)',
+      badgeBorder: 'rgba(52, 211, 153, 0.5)',
+      badgeColor: '#34D399',
+      title: 'Certified Architectural Safety',
+      description: 'ISO-compliant safety glazing delivering flawless protection for residential & commercial builds.',
+      highlightColor: '#34D399',
+    },
+  ];
+
+  const storyStages = isMobile ? mobileStages : desktopStages;
+  const currentStageData = storyStages[activeStage] || storyStages[0];
 
   return (
     <section
@@ -326,7 +445,7 @@ export default function Hero3DCanvas() {
       <style>{`
         @media (max-width: 768px) {
           .hero-3d-section-wrap {
-            background: #181A1F !important;
+            background: #000000 !important;
             height: 100vh !important;
             height: 100dvh !important;
             min-height: 100dvh !important;
@@ -383,35 +502,6 @@ export default function Hero3DCanvas() {
             margin-bottom: 0.65rem !important;
             line-height: 1.45 !important;
             color: #F1F5F9 !important;
-          }
-          .hero-3d-specs-strip {
-            display: grid !important;
-            grid-template-columns: repeat(3, 1fr) !important;
-            gap: 0.35rem !important;
-            width: 100% !important;
-            padding: 0.45rem 0.75rem !important;
-            margin-bottom: 0.65rem !important;
-            background: rgba(8, 12, 20, 0.65) !important;
-            backdrop-filter: blur(12px) !important;
-            border-radius: 12px !important;
-          }
-          .hero-3d-btn-group {
-            display: flex !important;
-            flex-direction: row !important;
-            gap: 0.5rem !important;
-            width: 100% !important;
-            margin-bottom: 0.35rem !important;
-          }
-          .hero-3d-primary-btn {
-            padding: 0.45rem 0.85rem !important;
-            font-size: 0.75rem !important;
-            flex: 1 1 auto !important;
-            justify-content: center !important;
-          }
-          .hero-3d-sample-btn {
-            padding: 0.45rem 0.75rem !important;
-            font-size: 0.75rem !important;
-            justify-content: center !important;
           }
           .hero-3d-rotating-badge {
             right: 1.25rem !important;
@@ -555,6 +645,54 @@ export default function Hero3DCanvas() {
           </div>
         </div>
       </div>
+
+      {/* Mobile Interactive Playback Pill & Swipe Prompt */}
+      {isMobile && (
+        <div
+          style={{
+            position: 'absolute',
+            left: '1rem',
+            bottom: 'calc(clamp(3.75rem, 8vh, 5.5rem) + env(safe-area-inset-bottom, 0px))',
+            zIndex: 25,
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.6rem',
+            background: 'rgba(8, 12, 20, 0.82)',
+            backdropFilter: 'blur(16px)',
+            WebkitBackdropFilter: 'blur(16px)',
+            border: '1px solid rgba(255, 255, 255, 0.15)',
+            borderRadius: '9999px',
+            padding: '0.35rem 0.85rem',
+            boxShadow: '0 8px 30px rgba(0, 0, 0, 0.7)',
+          }}
+        >
+          <button
+            onClick={toggleAutoPlay}
+            aria-label={isPlayingAuto ? 'Pause impact test' : 'Play hammer impact test'}
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.35rem',
+              background: isPlayingAuto ? '#EF4444' : '#2563EB',
+              color: '#FFFFFF',
+              border: 'none',
+              borderRadius: '9999px',
+              padding: '0.3rem 0.75rem',
+              fontSize: '0.74rem',
+              fontWeight: 800,
+              cursor: 'pointer',
+              boxShadow: isPlayingAuto ? '0 0 14px rgba(239, 68, 68, 0.6)' : '0 0 14px rgba(37, 99, 235, 0.6)',
+              transition: 'all 0.2s ease',
+            }}
+          >
+            {isPlayingAuto ? <Pause size={12} /> : <Play size={12} />}
+            <span>{isPlayingAuto ? 'Pause' : 'Play Strike'}</span>
+          </button>
+          <span style={{ fontSize: '0.72rem', color: '#94A3B8', fontWeight: 700, letterSpacing: '0.02em' }}>
+            {Math.round(frameProgress * 100)}%
+          </span>
+        </div>
+      )}
 
       {/* Floating Rotating 65 Years Badge */}
       <div

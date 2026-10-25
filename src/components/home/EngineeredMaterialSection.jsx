@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  Layers, 
-  ShieldCheck, 
-  Leaf, 
-  Thermometer, 
-  Box, 
-  ArrowRight, 
+import {
+  Layers,
+  ShieldCheck,
+  Leaf,
+  Thermometer,
+  Box,
+  ArrowRight,
   Settings,
   Gem
 } from 'lucide-react';
@@ -58,10 +58,10 @@ export default function EngineeredMaterialSection() {
   ];
 
   return (
-    <section 
-      style={{ 
-        position: 'relative', 
-        padding: '5rem 1.5rem', 
+    <section
+      style={{
+        position: 'relative',
+        padding: '5rem 1.5rem',
         background: 'linear-gradient(180deg, #F8FAFC 0%, #F1F5F9 100%)',
         color: '#0F172A',
         fontFamily: "'Inter', sans-serif",
@@ -69,35 +69,35 @@ export default function EngineeredMaterialSection() {
       }}
     >
       {/* Background Architectural Subtle Pattern */}
-      <div 
+      <div
         style={{
           position: 'absolute',
           inset: 0,
           backgroundImage: 'radial-gradient(circle at 50% 0%, rgba(226, 232, 240, 0.6) 0%, transparent 70%)',
           pointerEvents: 'none'
-        }} 
+        }}
       />
 
       <div style={{ maxWidth: '1280px', margin: '0 auto', position: 'relative', zIndex: 2 }}>
-        
+
         {/* Top Header Row with Left/Right Watermark Accents */}
         <div style={{ position: 'relative', textAlign: 'center', marginBottom: '3.5rem' }}>
-          
+
           {/* Vertical Stacked Watermark Text (Left) */}
-          <div 
-            style={{ 
-              position: 'absolute', 
-              left: 0, 
+          <div
+            style={{
+              position: 'absolute',
+              left: 0,
               top: '50%',
               transform: 'translateY(-50%)',
-              display: 'flex', 
-              flexDirection: 'column', 
+              display: 'flex',
+              flexDirection: 'column',
               alignItems: 'flex-start',
               gap: '0.2rem',
-              color: '#CBD5E1', 
-              fontSize: '0.6875rem', 
-              fontWeight: 700, 
-              letterSpacing: '0.22em', 
+              color: '#CBD5E1',
+              fontSize: '0.6875rem',
+              fontWeight: 700,
+              letterSpacing: '0.22em',
               lineHeight: 1.4,
               textAlign: 'left',
               userSelect: 'none'
@@ -113,15 +113,15 @@ export default function EngineeredMaterialSection() {
 
 
           {/* Sub-header text with horizontal lines */}
-          <div 
-            style={{ 
-              display: 'inline-flex', 
-              alignItems: 'center', 
-              gap: '0.85rem', 
-              color: '#B45309', 
-              fontSize: '0.75rem', 
-              fontWeight: 700, 
-              letterSpacing: '0.2em', 
+          <div
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.85rem',
+              color: '#B45309',
+              fontSize: '0.75rem',
+              fontWeight: 700,
+              letterSpacing: '0.2em',
               textTransform: 'uppercase',
               marginBottom: '0.75rem'
             }}
@@ -132,12 +132,12 @@ export default function EngineeredMaterialSection() {
           </div>
 
           {/* Main Title */}
-          <h2 
-            style={{ 
-              fontSize: 'clamp(2rem, 3.8vw, 3.25rem)', 
-              fontWeight: 900, 
-              textTransform: 'uppercase', 
-              letterSpacing: '-0.02em', 
+          <h2
+            style={{
+              fontSize: 'clamp(2rem, 3.8vw, 3.25rem)',
+              fontWeight: 900,
+              textTransform: 'uppercase',
+              letterSpacing: '-0.02em',
               color: '#0F172A',
               margin: '0 0 1rem 0',
               lineHeight: 1.15
@@ -147,12 +147,12 @@ export default function EngineeredMaterialSection() {
           </h2>
 
           {/* Subtitle */}
-          <p 
-            style={{ 
-              color: '#475569', 
-              fontSize: '1.0625rem', 
-              lineHeight: 1.6, 
-              maxWidth: '680px', 
+          <p
+            style={{
+              color: '#475569',
+              fontSize: '1.0625rem',
+              lineHeight: 1.6,
+              maxWidth: '680px',
               margin: '0 auto',
               fontWeight: 400
             }}
@@ -162,10 +162,10 @@ export default function EngineeredMaterialSection() {
         </div>
 
         {/* 3 Material Cards Grid */}
-        <div 
-          style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', 
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
             gap: '2rem',
             marginBottom: '3.5rem'
           }}
@@ -329,11 +329,11 @@ export default function EngineeredMaterialSection() {
                       cursor: 'pointer',
                       transition: 'all 0.25s ease'
                     }}
-                    onMouseEnter={(e) => { 
+                    onMouseEnter={(e) => {
                       e.currentTarget.style.background = '#F8FAFC';
                       e.currentTarget.style.borderColor = '#CBD5E1';
                     }}
-                    onMouseLeave={(e) => { 
+                    onMouseLeave={(e) => {
                       e.currentTarget.style.background = '#FFFFFF';
                       e.currentTarget.style.borderColor = '#E2E8F0';
                     }}
@@ -360,11 +360,11 @@ export default function EngineeredMaterialSection() {
           }}
         >
           {/* Key Trust Signals Row */}
-          <div 
-            style={{ 
-              display: 'flex', 
+          <div
+            style={{
+              display: 'flex',
               flexWrap: 'wrap',
-              alignItems: 'center', 
+              alignItems: 'center',
               gap: '1.25rem',
               color: '#475569',
               fontSize: '0.8125rem',
@@ -393,10 +393,10 @@ export default function EngineeredMaterialSection() {
           </div>
 
           {/* Right Tagline */}
-          <div 
-            style={{ 
-              display: 'flex', 
-              alignItems: 'center', 
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
               gap: '0.75rem',
               color: '#94A3B8',
               fontSize: '0.75rem',

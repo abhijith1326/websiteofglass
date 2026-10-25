@@ -1,19 +1,19 @@
 import React from 'react';
-import { 
-  Building2, 
-  Landmark, 
-  Cpu, 
-  Layers, 
-  Compass, 
-  Briefcase, 
-  Gem, 
-  Sofa, 
-  Stethoscope, 
-  Wrench, 
-  Sparkles, 
-  Award, 
-  Package, 
-  Lightbulb, 
+import {
+  Building2,
+  Landmark,
+  Cpu,
+  Layers,
+  Compass,
+  Briefcase,
+  Gem,
+  Sofa,
+  Stethoscope,
+  Wrench,
+  Sparkles,
+  Award,
+  Package,
+  Lightbulb,
   Factory,
   ShieldCheck,
   CheckCircle2
@@ -66,11 +66,11 @@ export default function SpecCalculator() {
   const row2Triple = [...row2Distributors, ...row2Distributors, ...row2Distributors];
 
   return (
-    <section 
-      id="distributors-marquee" 
-      style={{ 
-        background: '#FFFFFF', 
-        padding: '5.5rem 0', 
+    <section
+      id="distributors-marquee"
+      style={{
+        background: '#FFFFFF',
+        padding: '5.5rem 0',
         position: 'relative',
         overflow: 'hidden',
         color: '#0F172A',
@@ -157,19 +157,19 @@ export default function SpecCalculator() {
 
       {/* Section Header */}
       <div style={{ maxWidth: '1240px', margin: '0 auto', textAlign: 'center', marginBottom: '3rem', padding: '0 1.5rem', position: 'relative', zIndex: 2 }}>
-        <div 
-          style={{ 
-            display: 'inline-flex', 
-            alignItems: 'center', 
-            gap: '0.6rem', 
+        <div
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.6rem',
             background: '#EFF6FF',
             border: '1px solid #BFDBFE',
             padding: '0.45rem 1.25rem',
             borderRadius: '9999px',
-            color: '#1D4ED8', 
-            fontSize: '0.78125rem', 
-            fontWeight: 800, 
-            letterSpacing: '0.12em', 
+            color: '#1D4ED8',
+            fontSize: '0.78125rem',
+            fontWeight: 800,
+            letterSpacing: '0.12em',
             textTransform: 'uppercase',
             marginBottom: '1rem'
           }}
@@ -220,23 +220,23 @@ export default function SpecCalculator() {
 
       {/* CONTINUOUS MARQUEE CAROUSEL CONTAINER */}
       <div className="marquee-container" style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem' }}>
-        
+
         {/* ROW 1: Scrolling Left */}
         <div style={{ overflow: 'hidden', width: '100%' }}>
           <div className="marquee-track-left">
             {row1Triple.map((item, idx) => (
               <div key={`row1-${idx}`} className="distributor-card">
                 {/* Logo / Badge Emblem */}
-                <div 
-                  style={{ 
-                    width: '52px', 
-                    height: '52px', 
-                    borderRadius: '14px', 
-                    background: '#FFFFFF', 
-                    border: `1.5px solid ${item.color}40`, 
-                    display: 'flex', 
-                    alignItems: 'center', 
-                    justifyContent: 'center', 
+                <div
+                  style={{
+                    width: '52px',
+                    height: '52px',
+                    borderRadius: '14px',
+                    background: '#FFFFFF',
+                    border: `1.5px solid ${item.color}40`,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
                     flexShrink: 0,
                     color: item.color,
                     boxShadow: `0 4px 12px ${item.color}15`,
@@ -245,10 +245,10 @@ export default function SpecCalculator() {
                   }}
                 >
                   {item.logo ? (
-                    <img 
-                      src={item.logo} 
-                      alt={item.name} 
-                      style={{ width: '100%', height: '100%', objectFit: 'contain' }} 
+                    <img
+                      src={item.logo}
+                      alt={item.name}
+                      style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                     />
                   ) : (
                     item.icon
@@ -258,13 +258,13 @@ export default function SpecCalculator() {
                 {/* Info Text */}
                 <div style={{ overflow: 'hidden' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '3px' }}>
-                    <span 
-                      style={{ 
-                        fontSize: '0.625rem', 
-                        fontWeight: 900, 
-                        background: `${item.color}15`, 
-                        color: item.color, 
-                        padding: '2px 6px', 
+                    <span
+                      style={{
+                        fontSize: '0.625rem',
+                        fontWeight: 900,
+                        background: `${item.color}15`,
+                        color: item.color,
+                        padding: '2px 6px',
                         borderRadius: '4px',
                         letterSpacing: '0.05em'
                       }}
@@ -275,11 +275,11 @@ export default function SpecCalculator() {
                       {item.category}
                     </span>
                   </div>
-                  <div 
-                    style={{ 
-                      fontSize: '0.9375rem', 
-                      fontWeight: 800, 
-                      color: '#0F172A', 
+                  <div
+                    style={{
+                      fontSize: '0.9375rem',
+                      fontWeight: 800,
+                      color: '#0F172A',
                       lineHeight: 1.3,
                       whiteSpace: 'nowrap',
                       overflow: 'hidden',
@@ -300,16 +300,16 @@ export default function SpecCalculator() {
             {row2Triple.map((item, idx) => (
               <div key={`row2-${idx}`} className="distributor-card">
                 {/* Logo / Badge Emblem */}
-                <div 
-                  style={{ 
-                    width: '52px', 
-                    height: '52px', 
-                    borderRadius: '14px', 
-                    background: '#FFFFFF', 
-                    border: `1.5px solid ${item.color}40`, 
-                    display: 'flex', 
-                    alignItems: 'center', 
-                    justifyContent: 'center', 
+                <div
+                  style={{
+                    width: '52px',
+                    height: '52px',
+                    borderRadius: '14px',
+                    background: '#FFFFFF',
+                    border: `1.5px solid ${item.color}40`,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
                     flexShrink: 0,
                     color: item.color,
                     boxShadow: `0 4px 12px ${item.color}15`,
@@ -318,10 +318,10 @@ export default function SpecCalculator() {
                   }}
                 >
                   {item.logo ? (
-                    <img 
-                      src={item.logo} 
-                      alt={item.name} 
-                      style={{ width: '100%', height: '100%', objectFit: 'contain' }} 
+                    <img
+                      src={item.logo}
+                      alt={item.name}
+                      style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                     />
                   ) : (
                     item.icon
@@ -331,13 +331,13 @@ export default function SpecCalculator() {
                 {/* Info Text */}
                 <div style={{ overflow: 'hidden' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '3px' }}>
-                    <span 
-                      style={{ 
-                        fontSize: '0.625rem', 
-                        fontWeight: 900, 
-                        background: `${item.color}15`, 
-                        color: item.color, 
-                        padding: '2px 6px', 
+                    <span
+                      style={{
+                        fontSize: '0.625rem',
+                        fontWeight: 900,
+                        background: `${item.color}15`,
+                        color: item.color,
+                        padding: '2px 6px',
                         borderRadius: '4px',
                         letterSpacing: '0.05em'
                       }}
@@ -348,11 +348,11 @@ export default function SpecCalculator() {
                       {item.category}
                     </span>
                   </div>
-                  <div 
-                    style={{ 
-                      fontSize: '0.9375rem', 
-                      fontWeight: 800, 
-                      color: '#0F172A', 
+                  <div
+                    style={{
+                      fontSize: '0.9375rem',
+                      fontWeight: 800,
+                      color: '#0F172A',
                       lineHeight: 1.3,
                       whiteSpace: 'nowrap',
                       overflow: 'hidden',
@@ -370,12 +370,12 @@ export default function SpecCalculator() {
       </div>
 
       {/* Bottom Counter Bar */}
-      <div 
-        style={{ 
-          marginTop: '3.5rem', 
-          display: 'flex', 
-          justifyContent: 'center', 
-          alignItems: 'center', 
+      <div
+        style={{
+          marginTop: '3.5rem',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
           gap: '2.5rem',
           flexWrap: 'wrap',
           padding: '0 1.5rem',

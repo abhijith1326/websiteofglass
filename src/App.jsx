@@ -26,6 +26,7 @@ export default function App() {
         <Route path="/glass-solutions" element={<GlassSolutions />} />
         <Route path="/plywood-solutions" element={<PlywoodSolutions />} />
         <Route path="/process" element={<ServicesProcess />} />
+        <Route path="/services" element={<ServicesProcess />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/quality" element={<Quality />} />

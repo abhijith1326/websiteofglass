@@ -9,7 +9,6 @@ import AcousticSimulatorCanvas from '../components/tools/AcousticSimulatorCanvas
 import SpecCalculator from '../components/tools/SpecCalculator';
 import WhyChooseUs from '../components/home/WhyChooseUs';
 import EngineeredMaterialSection from '../components/home/EngineeredMaterialSection';
-import SandyResortGallery from '../components/home/SandyResortGallery';
 import { useSampleCart } from '../context/SampleCartContext';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
@@ -104,25 +103,14 @@ export default function Home() {
       {/* WHY CHOOSE TRIVANDRUM GLASS SECTION */}
       <WhyChooseUs background="#04070D" />
 
-      {/* Sandy Resort Flagship Project Gallery (All Photos & Videos) */}
-      <div className="reveal-glass-3d">
-        <SandyResortGallery />
-      </div>
-
       {/* Interactive 3D Canvas Optics & Light Visualizer */}
-      <div className="reveal-depth">
-        <GlassVisualizerCanvas />
-      </div>
+      <GlassVisualizerCanvas />
 
       {/* Web Audio API Sound Attenuation Simulator */}
-      <div className="reveal-glass-3d">
-        <AcousticSimulatorCanvas />
-      </div>
+      <AcousticSimulatorCanvas />
 
       {/* Spec & Load Calculator */}
-      <div className="reveal-depth">
-        <SpecCalculator />
-      </div>
+      <SpecCalculator />
 
       {/* Stats Counter Section with Ultra-Glass Glow Cards */}
       <section style={{ padding: '6rem 1.5rem', background: '#04070D', position: 'relative' }}>

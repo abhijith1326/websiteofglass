@@ -5,6 +5,17 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 3000,
-    open: true
-  }
+    open: false,
+    watch: {
+      ignored: [
+        '**/*.zip',
+        '**/*.xlsx',
+        '**/*.mp4',
+        '**/Glass_*/**',
+        '**/cdfc/**',
+        '**/legacy_html/**',
+        '**/.git/**',
+      ],
+    },
+  },
 });

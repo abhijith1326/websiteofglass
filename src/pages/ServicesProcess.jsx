@@ -178,6 +178,7 @@ export default function ServicesProcess() {
       {/* ========================================================================= */}
       {showEntrance && (
         <div
+          onClick={handleVideoCompleted}
           style={{
             position: 'fixed',
             inset: 0,
@@ -186,6 +187,7 @@ export default function ServicesProcess() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
+            cursor: 'pointer',
             pointerEvents: startTransition ? 'none' : 'auto',
             overflow: 'hidden',
             opacity: startTransition ? 0 : 1,
@@ -200,6 +202,8 @@ export default function ServicesProcess() {
             autoPlay
             muted
             playsInline
+            disablePictureInPicture
+            controlsList="nodownload noplaybackrate nofullscreen noremoteplayback"
             onPlay={handleVideoPlay}
             onLoadedMetadata={handleVideoPlay}
             onEnded={handleVideoCompleted}
@@ -208,7 +212,8 @@ export default function ServicesProcess() {
               height: '100vh',
               objectFit: 'cover',
               position: 'absolute',
-              inset: 0
+              inset: 0,
+              pointerEvents: 'none'
             }}
           >
             <source src="/assets/videos/Automatic_sliding_doors_opening_20260929165712.mp4" type="video/mp4" />
@@ -227,39 +232,6 @@ export default function ServicesProcess() {
               pointerEvents: 'none'
             }}
           />
-
-          {/* Original video color maintained - no dark overlay tint */}
-
-          {/* Top Entrance Badge */}
-          <div style={{
-            position: 'absolute',
-            top: '2.5rem',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            zIndex: 10,
-            textAlign: 'center',
-            opacity: startTransition ? 0 : 1,
-            transition: 'opacity 0.3s ease'
-          }}>
-            <div style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.6rem',
-              background: 'rgba(15, 23, 42, 0.85)',
-              border: '1px solid rgba(96, 165, 250, 0.4)',
-              color: '#60A5FA',
-              padding: '0.5rem 1.25rem',
-              borderRadius: '9999px',
-              backdropFilter: 'blur(12px)',
-              fontSize: '0.8125rem',
-              fontWeight: 800,
-              letterSpacing: '0.12em',
-              boxShadow: '0 10px 30px rgba(0,0,0,0.5)'
-            }}>
-              <Sparkles size={16} color="#60A5FA" />
-              <span>AUTOMATIC ENTRANCE SYSTEMS • SERVICES PORTAL</span>
-            </div>
-          </div>
 
           {/* Bottom Action Button */}
           <div style={{
